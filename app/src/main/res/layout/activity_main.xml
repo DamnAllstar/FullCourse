@@ -7,5 +7,12 @@
     android:measureWithLargestChild="false">
 
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="                                   Sign In"
+        android:id="@+id/textView"
+        android:layout_gravity="center_vertical" />
 </LinearLayout>
 
