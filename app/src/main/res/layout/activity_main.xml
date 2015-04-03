@@ -1,18 +1,19 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     android:weightSum="1"
-    android:measureWithLargestChild="false">
+    android:measureWithLargestChild="false"
+    android:id="@+id/FullCourse">
 
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="                                   Sign In"
-        android:id="@+id/textView"
-        android:layout_gravity="center_vertical" />
-</LinearLayout>
+        android:text="Sign In"
+        android:id="@+id/textView3"
+        android:layout_marginTop="198dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
 
