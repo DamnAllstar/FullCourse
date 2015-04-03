@@ -4,27 +4,70 @@
     android:layout_height="match_parent"
     android:weightSum="1"
     android:measureWithLargestChild="false"
-    android:id="@+id/FullCourse">
+    android:id="@+id/FullCourse"
+    android:background="@drawable/back">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:id="@+id/textView3"
-        android:layout_marginTop="212dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fullcoursePic"
-        android:src="@mipmap/fullcourse"
-        android:longClickable="true"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="28dp" />
+        android:id="@+id/imageView4"
+        android:src="@drawable/fc"
+        android:layout_marginTop="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="SIGN IN"
+        android:id="@+id/textView3"
+        android:textColor="#000"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="15"
+        android:id="@+id/editText2"
+        android:hint="e-mail"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:hint="password"
+        android:layout_marginTop="45dp"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_alignTop="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/button"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="profile"
+        android:id="@+id/btnStartAnotherActivity"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 
