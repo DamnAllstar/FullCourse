@@ -24,6 +24,10 @@
             android:name=".test_01"
             android:label="@string/title_activity_test_01" >
         </activity>
+        <activity
+            android:name=".profile"
+            android:label="@string/title_activity_profile" >
+        </activity>
     </application>
 
 </manifest>
