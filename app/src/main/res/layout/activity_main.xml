@@ -5,7 +5,7 @@
     android:weightSum="1"
     android:measureWithLargestChild="false"
     android:id="@+id/FullCourse"
-    android:background="@drawable/back">
+    android:background="@drawable/back_3">
 
 
     <ImageView
@@ -13,18 +13,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:src="@drawable/fc"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="84dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/editText2"
+        android:layout_marginStart="26dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="SIGN IN"
+        android:text="Sign In"
         android:id="@+id/textView3"
-        android:textColor="#000"
-        android:layout_marginTop="49dp"
+        android:textColor="#fff"
+        android:layout_marginTop="50dp"
         android:layout_below="@+id/imageView4"
         android:layout_centerHorizontal="true" />
 
@@ -68,6 +69,16 @@
         android:layout_marginTop="50dp"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView5"
+        android:src="@drawable/back_2"
+        android:layout_above="@+id/textView3"
+        android:layout_toEndOf="@+id/imageView4"
+        android:layout_marginLeft="10dp" />
+
 
 </RelativeLayout>
 
