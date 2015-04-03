@@ -3,5 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
 
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom" />
 
 </menu>
