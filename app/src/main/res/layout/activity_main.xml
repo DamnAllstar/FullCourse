@@ -2,32 +2,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     android:weightSum="1"
     android:measureWithLargestChild="false"
-    android:background="#414141">
-
-
-    <Button
-        android:id="@+id/btnStartAnotherActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    android:id="@+id/FullCourse">
 
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="                                   Sign In"
-        android:id="@+id/textView"
-        android:layout_gravity="center_vertical"
+        android:text="Sign In"
+        android:id="@+id/textView3"
+        android:layout_marginTop="212dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="157dp" />
+        android:layout_centerHorizontal="true" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullcoursePic"
+        android:src="@mipmap/fullcourse"
+        android:longClickable="true"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="28dp" />
 
 </RelativeLayout>
 
