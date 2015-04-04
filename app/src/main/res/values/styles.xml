@@ -8,4 +8,8 @@
     <style name="Profile" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Recommend" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Customize your theme here. -->
+    </style>
 </resources>
