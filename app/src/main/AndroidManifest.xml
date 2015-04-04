@@ -21,11 +21,6 @@
             android:label="@string/title_activity_main_activity2" >
         </activity>
         <activity
-            android:name=".Recommend"
-            android:label="Recommend"
-            android:theme="@style/Recommend" >
-        </activity>
-        <activity
             android:name=".profile"
             android:label="@string/title_activity_profile"
             android:theme="@style/Profile" >
