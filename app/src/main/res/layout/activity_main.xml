@@ -12,8 +12,19 @@
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:id="@+id/textView3"
-        android:layout_marginTop="198dp"
+        android:layout_marginTop="212dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullcoursePic"
+        android:src="@mipmap/fullcourse"
+        android:longClickable="true"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="28dp" />
+
 </RelativeLayout>
 
