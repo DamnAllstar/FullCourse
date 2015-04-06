@@ -26,8 +26,15 @@
             android:theme="@style/Profile" >
             <intent-filter>
                 <action android:name="com.hmkcode.android.ANOTHER_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Recommend"
+            android:label="@string/title_activity_recommend"
+
+            >
         </activity>
     </application>
 
