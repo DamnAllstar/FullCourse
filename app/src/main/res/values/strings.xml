@@ -9,6 +9,7 @@
     <string name="title_activity_test_01">test_01</string>
     <string name="title_activity_profile">profile</string>
     <string name="title_activity_recommend">Recommend</string>
+    <string name="done">Done</string>
 
 
 </resources>
