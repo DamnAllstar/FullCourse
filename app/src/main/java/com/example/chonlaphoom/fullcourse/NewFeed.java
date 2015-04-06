@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity2 extends ActionBarActivity {
+public class NewFeed extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
