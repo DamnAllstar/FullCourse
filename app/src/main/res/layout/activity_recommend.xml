@@ -14,7 +14,9 @@
         android:layout_gravity="bottom"
         android:layout_height="40dp"
         android:layout_width="fill_parent"
-        android:text="done" />
+        android:text="done"
+        android:id="@+id/btnDone"
+        />
 
 
 </LinearLayout>
