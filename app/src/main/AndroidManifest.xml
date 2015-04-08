@@ -33,8 +33,19 @@
         <activity
             android:name=".Recommend"
             android:label="@string/title_activity_recommend"
-
-            >
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
+        </activity>
+        <activity
+            android:name=".Setting"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".MyFullCourse"
+            android:label="@string/title_activity_my_full_course" >
+        </activity>
+        <activity
+            android:name=".Subscribe"
+            android:label="@string/title_activity_subscribe" >
         </activity>
     </application>
 

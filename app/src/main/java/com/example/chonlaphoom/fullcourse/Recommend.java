@@ -12,6 +12,7 @@ import android.view.MenuItem;
 public class Recommend extends ActionBarActivity implements View.OnClickListener {
 
     Button btnDone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

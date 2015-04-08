@@ -11,6 +11,9 @@
     <string name="title_activity_profile">profile</string>
     <string name="title_activity_recommend">Recommend</string>
     <string name="done">Done</string>
-
+    <string name="title_activity_setting">Setting</string>
+    <string name="setting">setting!!a</string>
+    <string name="title_activity_my_full_course">MyFullCourse</string>
+    <string name="title_activity_subscribe">Subscribe</string>
 
 </resources>
