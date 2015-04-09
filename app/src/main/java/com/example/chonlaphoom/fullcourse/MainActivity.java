@@ -6,30 +6,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity implements OnClickListener {
-    Button btnStartAnotherActivity;
+import android.widget.ImageButton;
+
+
+public class MainActivity extends ActionBarActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnStartAnotherActivity = (Button) findViewById(R.id.btnStartAnotherActivity);
 
-        btnStartAnotherActivity.setOnClickListener(this);
+        //In this next line, note that 'btn' will never be used, it's
+        //grayed out in the "Button btn...", and in the (R.id.btn) it is
+        //shown in red font, indicating I probably need to declare a resource of some kind?
+
+
+
+        ImageButton btn = (ImageButton)findViewById(R.id.btnStartAnotherActivity);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Recommend.class);
+                startActivity(intent);
+            }
+        });
     }
-    @Override
-    public void onClick(View view) {
 
-        Intent inent = new Intent(this, profile.class);
-
-        // calling an activity using <intent-filter> action name
-        //  Intent inent = new Intent("com.hmkcode.android.ANOTHER_ACTIVITY");
-
-        startActivity(inent);
-    }
 
 
     @Override

@@ -5,7 +5,7 @@
     android:weightSum="1"
     android:measureWithLargestChild="false"
     android:id="@+id/FullCourse"
-    android:background="@drawable/back_3">
+    android:background="@drawable/back_8">
 
 
     <ImageView
@@ -13,32 +13,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:src="@drawable/fc"
-        android:layout_marginTop="84dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginStart="26dp" />
+        android:layout_marginTop="47dp"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Sign In"
-        android:id="@+id/textView3"
-        android:textColor="#fff"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/imageView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btnStartAnotherActivity" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:ems="15"
+        android:ems="12"
         android:id="@+id/editText2"
         android:hint="e-mail"
-        android:layout_marginTop="37dp"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+
+        android:layout_marginTop="88dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/btnStartAnotherActivity" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -47,36 +37,46 @@
         android:ems="10"
         android:id="@+id/editText"
         android:hint="password"
-        android:layout_marginTop="45dp"
+        android:layout_below="@+id/editText2"
         android:layout_alignStart="@+id/editText2"
-        android:layout_alignTop="@+id/editText2"
         android:layout_alignEnd="@+id/editText2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/button"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="profile"
-        android:id="@+id/btnStartAnotherActivity"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText2" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView5"
         android:src="@drawable/back_2"
-        android:layout_above="@+id/textView3"
-        android:layout_toEndOf="@+id/imageView4"
-        android:layout_marginLeft="10dp" />
+
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_toEndOf="@+id/imageView4" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStartAnotherActivity"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/login"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton2"
+        android:layout_marginTop="103dp"
+        android:background="@drawable/login_facebook"
+        android:layout_below="@+id/btnStartAnotherActivity"
+        android:layout_centerHorizontal="true" />
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton3"
+        android:background="@drawable/login_google"
+        android:layout_below="@+id/imageButton2"
+        android:layout_centerHorizontal="true" />
+
 
 
 </RelativeLayout>
