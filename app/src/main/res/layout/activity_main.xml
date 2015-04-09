@@ -5,7 +5,7 @@
     android:weightSum="1"
     android:measureWithLargestChild="false"
     android:id="@+id/FullCourse"
-    android:background="@drawable/back_8">
+    android:background="@drawable/back_10">
 
 
     <ImageView
@@ -13,10 +13,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:src="@drawable/fc"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="48dp"
 
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/btnStartAnotherActivity" />
+        android:layout_alignStart="@+id/editText2"
+        android:layout_marginLeft="-10dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -26,9 +27,11 @@
         android:id="@+id/editText2"
         android:hint="e-mail"
 
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="87dp"
         android:layout_below="@+id/imageView4"
-        android:layout_alignStart="@+id/btnStartAnotherActivity" />
+        android:layout_alignStart="@+id/btnStartAnotherActivity"
+        android:textColorHint="#fff"
+        android:textColor="#fff" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -39,7 +42,9 @@
         android:hint="password"
         android:layout_below="@+id/editText2"
         android:layout_alignStart="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:layout_alignEnd="@+id/editText2"
+        android:textColorHint="#fff"
+        android:textColor="#fff" />
 
     <ImageView
         android:layout_width="wrap_content"
