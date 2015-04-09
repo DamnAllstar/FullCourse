@@ -24,8 +24,8 @@ public class Recommend extends ActionBarActivity implements View.OnClickListener
 
     public void onClick(View view) {
         //click button code here na
-        Intent Newfeed = new Intent(Recommend.this,NewFeed.class);
-        startActivity(Newfeed);
+        Intent Newfeeds = new Intent(Recommend.this,NewFeeds.class);
+        startActivity(Newfeeds);
 
     }
 
