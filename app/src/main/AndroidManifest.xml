@@ -67,6 +67,11 @@
             android:label="@string/title_activity_new_feeds"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
         </activity>
+        <activity
+            android:name=".register"
+            android:label="@string/title_activity_register"
+            android:theme="@style/MyCustomDialog">
+        </activity>
     </application>
 
 </manifest>

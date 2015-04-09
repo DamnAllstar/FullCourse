@@ -15,23 +15,23 @@
         android:src="@drawable/fc"
         android:layout_marginTop="48dp"
 
+        android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginLeft="-10dp" />
+        android:layout_alignStart="@+id/editText2" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:ems="12"
+        android:ems="15"
         android:id="@+id/editText2"
         android:hint="e-mail"
 
-        android:layout_marginTop="87dp"
-        android:layout_below="@+id/imageView4"
-        android:layout_alignStart="@+id/btnStartAnotherActivity"
+        android:layout_marginTop="88dp"
         android:textColorHint="#fff"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,26 +52,45 @@
         android:id="@+id/imageView5"
         android:src="@drawable/back_2"
 
-        android:layout_alignBottom="@+id/imageView4"
-        android:layout_toEndOf="@+id/imageView4" />
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_marginRight="20dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnStartAnotherActivity"
-        android:layout_marginTop="32dp"
         android:background="@drawable/login"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="30dp"
+        android:layout_alignStart="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:paddingLeft="500dp"
+        android:paddingRight="500dp"
+        android:paddingTop="28dp"
+        android:paddingBottom="28dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton2"
-        android:layout_marginTop="103dp"
         android:background="@drawable/login_facebook"
-        android:layout_below="@+id/btnStartAnotherActivity"
-        android:layout_centerHorizontal="true" />
+        android:paddingLeft="500dp"
+        android:paddingTop="25dp"
+        android:paddingRight="500dp"
+        android:paddingBottom="25dp"
+        android:layout_above="@+id/imageButton3"
+        android:layout_alignEnd="@+id/btnStartAnotherActivity2"
+        android:layout_alignStart="@+id/btnStartAnotherActivity2"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginRight="-4dp" />
 
 
     <ImageButton
@@ -79,9 +98,29 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageButton3"
         android:background="@drawable/login_google"
-        android:layout_below="@+id/imageButton2"
-        android:layout_centerHorizontal="true" />
+        android:paddingLeft="500dp"
+        android:paddingTop="25dp"
+        android:paddingRight="500dp"
+        android:paddingBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStartAnotherActivity2"
+        android:background="@drawable/signup"
+        android:layout_marginLeft="4dp"
+        android:paddingLeft="500dp"
+        android:paddingTop="25dp"
+        android:paddingRight="500dp"
+        android:paddingBottom="25dp"
+        android:layout_above="@+id/imageButton2"
+        android:layout_alignStart="@+id/btnStartAnotherActivity"
+        android:layout_alignEnd="@+id/btnStartAnotherActivity"
+        android:layout_marginRight="4dp" />
 
 
 </RelativeLayout>
