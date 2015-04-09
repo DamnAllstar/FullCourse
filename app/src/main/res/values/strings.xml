@@ -18,5 +18,6 @@
     <string name="My_FullCourse">MyFullCourse</string>
     <string name="title_activity_my_review">MyReview</string>
     <string name="title_activity_food_review">FoodReview</string>
+    <string name="title_activity_register">register</string>
 
 </resources>
