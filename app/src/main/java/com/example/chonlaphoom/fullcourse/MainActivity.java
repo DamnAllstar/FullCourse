@@ -25,11 +25,19 @@ public class MainActivity extends ActionBarActivity {
 
 
         ImageButton btn = (ImageButton)findViewById(R.id.btnStartAnotherActivity);
+        ImageButton btn2 = (ImageButton)findViewById(R.id.btnStartAnotherActivity2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Recommend.class);
+                startActivity(intent);
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, register.class);
                 startActivity(intent);
             }
         });
