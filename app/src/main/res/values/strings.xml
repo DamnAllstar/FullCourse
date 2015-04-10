@@ -15,5 +15,6 @@
     <string name="setting">setting!!a</string>
     <string name="title_activity_my_full_course">MyFullCourse</string>
     <string name="title_activity_subscribe">Subscribe</string>
+    <string name="My_FullCourse">MyFullCourse</string>
 
 </resources>
