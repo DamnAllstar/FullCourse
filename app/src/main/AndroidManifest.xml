@@ -23,7 +23,7 @@
         <activity
             android:name=".profile"
             android:label="@string/title_activity_profile"
-            android:theme="@style/Profile" >
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >" >
             <intent-filter>
                 <action android:name="com.hmkcode.android.ANOTHER_ACTIVITY" />
 
