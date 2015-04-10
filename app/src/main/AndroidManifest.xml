@@ -37,14 +37,17 @@
         </activity>
         <activity
             android:name=".Setting"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
             android:label="@string/title_activity_setting" >
         </activity>
         <activity
             android:name=".MyFullCourse"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
             android:label="@string/title_activity_my_full_course" >
         </activity>
         <activity
             android:name=".Subscribe"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
             android:label="@string/title_activity_subscribe" >
         </activity>
     </application>
