@@ -9,8 +9,8 @@ public class NewFeed extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_NewFeed);
-        int i =2 ;
+        setContentView(R.layout.activity_newfeed);
+
     }
 
 }
