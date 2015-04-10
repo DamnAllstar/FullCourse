@@ -53,11 +53,15 @@
         </activity>
         <activity
             android:name=".MyReview"
-            android:label="@string/title_activity_my_review" >
+            android:label="@string/title_activity_my_review"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
+
         </activity>
         <activity
             android:name=".FoodReview"
-            android:label="@string/title_activity_food_review" >
+            android:label="@string/title_activity_food_review"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
+            >
         </activity>
     </application>
 
