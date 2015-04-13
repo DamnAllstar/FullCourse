@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Layout;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,7 +18,8 @@ public class menu1_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        rootview = inflater.inflate(R.layout.menu1_layout,container,false);
+        rootview = inflater.inflate(R.layout.activity_profile,container,false);
         return rootview;
     }
+
 }

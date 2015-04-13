@@ -1,6 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -37,9 +38,8 @@ public class NewFeeds extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_feeds);
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        //mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -54,13 +54,19 @@ public class NewFeeds extends ActionBarActivity
 
         switch(position){
             case 0:
-                objFragment = new menu1_Fragment();
+                objFragment = new newfeeds_Fragment();
                 break;
             case 1:
-                objFragment = new menu2_Fragment();
+                objFragment = new menu1_Fragment();
                 break;
             case 2:
+                objFragment = new menu2_Fragment();
+                break;
+            case 3:
                 objFragment = new menu3_Fragment();
+                break;
+            case 4:
+                objFragment = new menu4_Fragment();
                 break;
         }
         // update the main content by replacing fragments
@@ -73,13 +79,19 @@ public class NewFeeds extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.title_section0);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.title_section1);
                 break;
             case 3:
+                mTitle = getString(R.string.title_section2);
+                break;
+            case 4:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section4);
                 break;
         }
     }

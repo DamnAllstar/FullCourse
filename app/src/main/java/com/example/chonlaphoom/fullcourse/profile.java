@@ -1,5 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,10 +9,10 @@ import android.view.MenuItem;
 import android.app.Activity;
 
 
-public class profile extends ActionBarActivity {
+public class profile extends ActionBarActivity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
     }
