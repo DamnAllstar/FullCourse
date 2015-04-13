@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <!--<activity
             android:name=".NewFeed"
             android:label="@string/title_activity_main_activity2" >
-        </activity>
+        </activity>-->
         <activity
             android:name=".profile"
             android:label="@string/title_activity_profile"
@@ -36,21 +36,21 @@
             android:label="@string/title_activity_recommend"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
         </activity>
-        <activity
+        <!--<activity
             android:name=".Setting"
             android:label="@string/title_activity_setting"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
-        </activity>
+        </activity>-->
         <activity
             android:name=".MyFullCourse"
             android:label="@string/title_activity_my_full_course"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
         </activity>
-        <activity
+        <!--<activity
             android:name=".Subscribe"
             android:label="@string/title_activity_subscribe"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
-        </activity>
+        </activity>-->
         <activity
             android:name=".MyReview"
             android:label="@string/title_activity_my_review"
