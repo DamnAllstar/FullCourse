@@ -122,6 +122,9 @@
         android:layout_alignEnd="@+id/btnStartAnotherActivity"
         android:layout_marginRight="4dp" />
 
-
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
 
