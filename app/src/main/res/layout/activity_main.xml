@@ -77,35 +77,6 @@
         android:paddingTop="28dp"
         android:paddingBottom="28dp" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
-        android:background="@drawable/login_facebook"
-        android:paddingLeft="500dp"
-        android:paddingTop="25dp"
-        android:paddingRight="500dp"
-        android:paddingBottom="25dp"
-        android:layout_above="@+id/imageButton3"
-        android:layout_alignEnd="@+id/btnStartAnotherActivity2"
-        android:layout_alignStart="@+id/btnStartAnotherActivity2"
-        android:layout_marginLeft="-4dp"
-        android:layout_marginRight="-4dp" />
-
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
-        android:background="@drawable/login_google"
-        android:paddingLeft="500dp"
-        android:paddingTop="25dp"
-        android:paddingRight="500dp"
-        android:paddingBottom="25dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_alignEnd="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -122,9 +93,43 @@
         android:layout_alignEnd="@+id/btnStartAnotherActivity"
         android:layout_marginRight="4dp" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+    <ImageButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton2"
+        android:background="@drawable/login_facebook"
+        android:paddingLeft="500dp"
+        android:paddingTop="25dp"
+        android:paddingRight="500dp"
+        android:paddingBottom="25dp"
+        android:layout_above="@+id/btnGoogle"
+        android:layout_alignEnd="@+id/btnStartAnotherActivity2"
+        android:layout_alignStart="@+id/btnStartAnotherActivity2"/>
+
+<!--
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton3"
+        android:background="@drawable/login_google"
+        android:paddingLeft="500dp"
+        android:paddingTop="25dp"
+        android:paddingRight="500dp"
+        android:paddingBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2" />
+-->
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2"
+        />
 </RelativeLayout>
 

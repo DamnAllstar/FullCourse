@@ -27,7 +27,6 @@ public class MainActivity extends ActionBarActivity {
         //grayed out in the "Button btn...", and in the (R.id.btn) it is
         //shown in red font, indicating I probably need to declare a resource of some kind?
 
-
         ImageButton btn = (ImageButton)findViewById(R.id.btnStartAnotherActivity);
         ImageButton btn2 = (ImageButton)findViewById(R.id.btnStartAnotherActivity2);
         email = (EditText)findViewById(R.id.editText2);
