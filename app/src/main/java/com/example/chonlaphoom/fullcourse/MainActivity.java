@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         printHashKey();
         FacebookSdk.sdkInitialize(getApplicationContext());
-
+        Log.d("Chonlaphoom", "onCreateMain");
         setContentView(R.layout.activity_main);
 
         //In this next line, note that 'btn' will never be used, it's
