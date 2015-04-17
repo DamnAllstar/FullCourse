@@ -29,4 +29,7 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_register">register</string>
     <string name="subscribe">Subscribe</string>
+
+    <string name="app_id">1639172389636496</string>
+
 </resources>

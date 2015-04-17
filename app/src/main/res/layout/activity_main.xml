@@ -14,7 +14,6 @@
         android:id="@+id/imageView4"
         android:src="@drawable/fc"
         android:layout_marginTop="48dp"
-
         android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/editText2" />
@@ -88,11 +87,13 @@
         android:paddingTop="25dp"
         android:paddingRight="500dp"
         android:paddingBottom="25dp"
-        android:layout_above="@+id/imageButton2"
         android:layout_alignStart="@+id/btnStartAnotherActivity"
         android:layout_alignEnd="@+id/btnStartAnotherActivity"
-        android:layout_marginRight="4dp" />
-
+        android:layout_marginRight="4dp"
+        android:layout_above="@+id/login_button"
+        />
+    <!--  android:layout_above="@+id/imageButton2" -->
+  <!--
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,7 +106,7 @@
         android:layout_above="@+id/btnGoogle"
         android:layout_alignEnd="@+id/btnStartAnotherActivity2"
         android:layout_alignStart="@+id/btnStartAnotherActivity2"/>
-
+-->
 <!--
     <ImageButton
         android:layout_width="wrap_content"
@@ -124,12 +125,21 @@
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_alignEnd="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2"
-        />
+        android:layout_marginBottom="42dp"
+        android:layout_alignEnd="@+id/login_button"
+        android:layout_alignStart="@+id/login_button" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignStart="@+id/btnStartAnotherActivity2"
+        android:layout_alignEnd="@+id/btnStartAnotherActivity2"
+        android:layout_above="@+id/btnGoogle" />
+
 </RelativeLayout>
 
