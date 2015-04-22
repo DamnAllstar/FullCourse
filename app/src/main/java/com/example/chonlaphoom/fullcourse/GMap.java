@@ -13,9 +13,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-/**
- * Created by amin on 4/21/2015.
- */
 public class GMap extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
@@ -115,7 +112,7 @@ public class GMap extends FragmentActivity {
 
 
         private void setUpMap() {
-
+            int a =0;
             double lat=18.769289;
             double lng=98.976250;
             String  title="No place";
