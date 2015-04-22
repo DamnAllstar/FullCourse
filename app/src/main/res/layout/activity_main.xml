@@ -141,5 +141,15 @@
         android:layout_alignEnd="@+id/btnStartAnotherActivity2"
         android:layout_above="@+id/btnGoogle" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:id="@+id/MP"
+        android:layout_above="@+id/imageView5"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/imageView5" />
+
 </RelativeLayout>
 
