@@ -112,8 +112,7 @@ public class GMap extends FragmentActivity {
 
 
         private void setUpMap() {
-            int a;
-            a=0;
+            int a=0;
             double lat=18.769289;
             double lng=98.976250;
             String  title="No place";
