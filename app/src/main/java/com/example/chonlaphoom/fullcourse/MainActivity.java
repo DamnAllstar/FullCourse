@@ -42,7 +42,6 @@ public class MainActivity extends ActionBarActivity {
         ImageButton btn = (ImageButton)findViewById(R.id.btnStartAnotherActivity);
         ImageButton btn2 = (ImageButton)findViewById(R.id.btnStartAnotherActivity2);
         Button mewmew = (Button)findViewById(R.id.MP);
-        int p=0;
         email = (EditText)findViewById(R.id.editText2);
         password =(EditText)findViewById(R.id.editText);
 
