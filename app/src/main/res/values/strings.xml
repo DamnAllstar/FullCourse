@@ -32,6 +32,8 @@
     <string name="title_activity_GMap">Map</string>
     <string name="app_id">1639172389636496</string>
 
+
+    <string name="fragment_newsfeed_list">newsfeed</string>
     <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
         AIzaSyC8vmcJWEsGjglkb7gdXoOg5Yz1SzuHgEs
     </string>
