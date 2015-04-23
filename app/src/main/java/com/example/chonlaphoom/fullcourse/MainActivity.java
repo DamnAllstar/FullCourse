@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -20,6 +21,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
+
+import org.json.JSONArray;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -137,6 +140,20 @@ public class MainActivity extends ActionBarActivity {
         } catch (PackageManager.NameNotFoundException e) {
 
         } catch (NoSuchAlgorithmException e) {
+
+        }
+    }
+
+    private class GetAllCustomerTask extends AsyncTask<ApiConnector,Long,JSONArray>
+    {
+        @Override
+        protected JSONArray doInBackground(ApiConnector... params) {
+            return null;
+        }
+
+        @Override
+        protected void OnPostExecute(JSONArray jsonArray)
+        {
 
         }
     }
