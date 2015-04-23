@@ -30,8 +30,8 @@ public class MainFragment extends android.support.v4.app.Fragment {
     private TextView mTextDetail;
 
 
-    private CallbackManager mCallbackManager;
-    private FacebookCallback<LoginResult> mCallback=new FacebookCallback<LoginResult>() {
+        private CallbackManager mCallbackManager;
+        private FacebookCallback<LoginResult> mCallback=new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
 
@@ -87,8 +87,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
         LoginButton.setFragment(this);
         LoginButton.registerCallback(mCallbackManager,mCallback);
         Log.d("Chonlaphoom", "onCreateView");
-
-
 
     }
 
