@@ -151,11 +151,6 @@ public class MainActivity extends ActionBarActivity {
             return null;
         }
 
-        @Override
-        protected void OnPostExecute(JSONArray jsonArray)
-        {
-
-        }
     }
 
 }
