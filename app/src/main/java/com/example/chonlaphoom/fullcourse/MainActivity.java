@@ -8,58 +8,32 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
 
 
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.Profile;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.text.BreakIterator;
 
 
 public class MainActivity extends ActionBarActivity {
 
     EditText email;
     EditText password;
-//include
-
-//< include
-
-
-
-
-    //begin
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         printHashKey();
         FacebookSdk.sdkInitialize(getApplicationContext());
-
-        //include
         Log.d("Chonlaphoom", "onCreateMain");
-
-        //<include
-
         setContentView(R.layout.activity_main);
 
         //In this next line, note that 'btn' will never be used, it's
@@ -91,9 +65,8 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
-
     }
+
 
 
     @Override
