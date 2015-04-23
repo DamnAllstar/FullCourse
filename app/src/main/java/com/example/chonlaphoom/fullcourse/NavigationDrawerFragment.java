@@ -1,5 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
+import android.content.Context;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -11,6 +13,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,8 +22,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -58,12 +67,20 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+    private int[] flag = new int[]{
+            R.drawable.icon_fullcourse,
+            R.drawable.icon_fav,
+            R.drawable.icon_sub,
+            R.drawable.icon_logout
+    };
+
     public NavigationDrawerFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         // Read in the flag indicating whether or not the user has demonstrated awareness of the
         // drawer. See PREF_USER_LEARNED_DRAWER for details.
@@ -97,17 +114,32 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+
+        //###################################MY ListView Adaptor###################################//
+        String[] from = {"flag"};
+        int[] to = {R.id.icon_list};
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+        for(int i=0;i<4;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("flag", Integer.toString(flag[i]));
+            aList.add(hm);
+        }
+
+        SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
+
+        mDrawerListView.setAdapter(adapter);
+        //########################################################################################//
+        /*
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_activated_1,
+                R.layout.item_list_layout,
                 android.R.id.text1,
                 new String[]{
-                        getString(R.string.title_section0),
-                        getString(R.string.title_section1),
                         getString(R.string.title_section2),
+                        getString(R.string.title_section1),
                         getString(R.string.title_section3),
                         getString(R.string.title_section4)
-                }));
+                }));*/
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }

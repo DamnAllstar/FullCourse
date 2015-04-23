@@ -20,10 +20,10 @@
     <string name="title_activity_food_review">FoodReview</string>
     <string name="title_activity_new_feeds">NewFeeds</string>
     <string name="title_section0">NewFeeds</string>
-    <string name="title_section1">Profile</string>
-    <string name="title_section2">FullCourse</string>
+    <string name="title_section1">My Favorites</string>
+    <string name="title_section2">My FullCourses</string>
     <string name="title_section3">Subscribe</string>
-    <string name="title_section4">Setting</string>
+    <string name="title_section4">Logout</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>

@@ -51,11 +51,11 @@ public class MainActivity extends ActionBarActivity {
                 //show text from text edit
                 Context context = getApplicationContext();
 
-                Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
 
                 //go to recommend
-                //Intent intent = new Intent(MainActivity.this, Recommend.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, Recommend.class);
+                startActivity(intent);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
