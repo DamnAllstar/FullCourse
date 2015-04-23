@@ -1,19 +1,18 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.view.View;
-
-
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -42,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
 
         ImageButton btn = (ImageButton)findViewById(R.id.btnStartAnotherActivity);
         ImageButton btn2 = (ImageButton)findViewById(R.id.btnStartAnotherActivity2);
+        Button mewmew = (Button)findViewById(R.id.MP);
         email = (EditText)findViewById(R.id.editText2);
         password =(EditText)findViewById(R.id.editText);
 
@@ -62,6 +62,36 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, register.class);
+                startActivity(intent);
+            }
+        });
+//to mark a place get data in here 0 for lat 1 for lng
+        final double[][] LL = new double[3][2];
+        LL[0][0] = 0.50;
+        LL[0][1] = 0.50;
+        LL[1][0] = 0.15;
+        LL[1][1] = 0.15;
+        LL[2][0] = 0.8;
+        LL[2][1] = 0.8;
+
+        mewmew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GMap.class);
+
+                Bundle LLsend = new Bundle();
+                LLsend.putSerializable("list", LL);
+
+                intent.putExtras(LLsend);
+
+                intent.putExtra("Arl",LL);  //Array passing
+                intent.putExtra("type",0);  //use type 1 to use a one place marking function
+                                            //type 0 to use many place marking function !!assign in the array above
+                //Type 1 passing variable
+                intent.putExtra("Lat",18.769289);
+                intent.putExtra("Lng",98.976250);
+                intent.putExtra("title","New place");
+                intent.putExtra("detail","This is stupid");
                 startActivity(intent);
             }
         });
