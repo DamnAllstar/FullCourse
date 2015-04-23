@@ -1,17 +1,19 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
 import android.view.View;
+
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -54,8 +56,8 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
 
                 //go to recommend
-                //Intent intent = new Intent(MainActivity.this, Recommend.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, NewFeeds.class);
+                startActivity(intent);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +88,7 @@ public class MainActivity extends ActionBarActivity {
 
                 intent.putExtra("Arl",LL);  //Array passing
                 intent.putExtra("type",0);  //use type 1 to use a one place marking function
-                                            //type 0 to use many place marking function !!assign in the array above
+                //type 0 to use many place marking function !!assign in the array above
                 //Type 1 passing variable
                 intent.putExtra("Lat",18.769289);
                 intent.putExtra("Lng",98.976250);
@@ -96,8 +98,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
