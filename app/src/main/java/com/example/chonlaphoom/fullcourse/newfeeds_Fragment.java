@@ -1,25 +1,34 @@
 package com.example.chonlaphoom.fullcourse;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+
 
 
 /**
  * Created by Thanaphon on 4/10/2015.
  */
-public class newfeeds_Fragment extends ActionBarActivity implements NewsFeed.OnFragmentInteractionListener {
+public class newfeeds_Fragment extends android.support.v4.app.Fragment implements NewsFeed.OnFragmentInteractionListener {
 
     //Button btnDone;
-
+    //##########################Tynk's Original#####################################
+    private FragmentActivity context;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_new_feeds);
+        getActivity().setContentView(R.layout.fragment_new_feeds);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            context.getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new NewsFeed())
                     .commit();
         }
@@ -29,16 +38,23 @@ public class newfeeds_Fragment extends ActionBarActivity implements NewsFeed.OnF
 
     }
 
-    public void onClick(View view) {
-        //click button code here na
-        Intent Newfeeds = new Intent(newfeeds_Fragment.this,NewFeeds.class);
-        startActivity(Newfeeds);
-
-    }
-
 
     @Override
     public void onFragmentInteraction(String id) {
 
     }
+
+    //#####################################################################
+/*
+    //#################Tan's Fragment Edition#######################################
+    View rootview;
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        rootview = inflater.inflate(R.layout.activity_newfeed,container,false);
+
+        return rootview;
+    }
+    //#############################################################################
+ */
 }

@@ -12,7 +12,7 @@ public class Recommend extends ActionBarActivity implements NewsFeed.OnFragmentI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recommended);
+        setContentView(R.layout.activity_recommend);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
