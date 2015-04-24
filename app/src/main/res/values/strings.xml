@@ -19,7 +19,7 @@
     <string name="title_activity_my_review">MyReview</string>
     <string name="title_activity_food_review">FoodReview</string>
     <string name="title_activity_new_feeds">NewFeeds</string>
-    <string name="title_section0">NewFeeds</string>
+    <string name="title_section0">Home</string>
     <string name="title_section1">My Favorites</string>
     <string name="title_section2">My FullCourses</string>
     <string name="title_section3">Subscribe</string>

@@ -17,8 +17,8 @@ import android.view.ViewGroup;
 /**
  * Created by Thanaphon on 4/10/2015.
  */
-public class newfeeds_Fragment extends android.support.v4.app.Fragment implements NewsFeed.OnFragmentInteractionListener {
-
+public class newfeeds_Fragment extends android.support.v4.app.Fragment /*implements NewsFeed.OnFragmentInteractionListener*/ {
+/*
     //Button btnDone;
     //##########################Tynk's Original#####################################
     private FragmentActivity context;
@@ -39,13 +39,14 @@ public class newfeeds_Fragment extends android.support.v4.app.Fragment implement
     }
 
 
+
     @Override
     public void onFragmentInteraction(String id) {
 
     }
-
+*/
     //#####################################################################
-/*
+
     //#################Tan's Fragment Edition#######################################
     View rootview;
     @Nullable
@@ -56,5 +57,4 @@ public class newfeeds_Fragment extends android.support.v4.app.Fragment implement
         return rootview;
     }
     //#############################################################################
- */
 }

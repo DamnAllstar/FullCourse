@@ -39,7 +39,7 @@ public class NewFeeds extends ActionBarActivity
         setContentView(R.layout.activity_new_feeds);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        //mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -55,7 +55,7 @@ public class NewFeeds extends ActionBarActivity
         switch(position){
             case 0:
                 objFragment = new newfeeds_Fragment();
-                mTitle="NewFeeds";
+                mTitle="Home";
                 break;
             case 1:
                 objFragment = new menu1_Fragment();
