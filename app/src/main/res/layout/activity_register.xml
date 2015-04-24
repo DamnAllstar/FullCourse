@@ -27,7 +27,7 @@
         android:inputType="textPersonName"
         android:ems="15"
         android:id="@+id/editText4"
-        android:hint="E-mail"
+        android:hint="Sirname"
         android:textStyle="italic"
         android:layout_below="@+id/editText3"
         android:layout_centerHorizontal="true"
@@ -41,19 +41,19 @@
         android:id="@+id/editText5"
         android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
-        android:hint="Password"
+        android:hint="E-mail"
         android:textStyle="italic"
         android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:ems="15"
         android:id="@+id/editText6"
         android:layout_below="@+id/editText5"
         android:layout_centerHorizontal="true"
-        android:hint="Re-Password"
+        android:hint="Password"
         android:textStyle="italic"
         android:layout_marginTop="20dp" />
 
@@ -71,7 +71,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
         android:background="@drawable/submit"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/editText6"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="15"
+        android:id="@+id/editText7"
+        android:hint="Re-Password"
+        android:textStyle="italic"
+        android:layout_below="@+id/editText6"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>

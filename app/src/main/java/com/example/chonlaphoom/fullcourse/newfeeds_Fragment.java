@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-
 /**
  * Created by Thanaphon on 4/10/2015.
  */

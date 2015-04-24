@@ -19,14 +19,13 @@ import java.io.IOException;
 public class ApiConnector {
 
 
-    public JSONArray GetAllcustomer()
+    public JSONArray GetAllCustomer()
     {
-        String url = "http://naneport.arg.in.th/eatwell/full/";
+        String url = "http://naneport.arg.in.th/eatwell/full/getUserFullCourse.php";
          HttpEntity httpEntity = null;
 
       try
       {
-
          DefaultHttpClient httpClient = new DefaultHttpClient();  // Default HttpClient
           HttpGet httpGet = new HttpGet(url);
 
@@ -34,16 +33,12 @@ public class ApiConnector {
 
           httpEntity = httpResponse.getEntity();
 
-
-
        } catch (ClientProtocolException e) {
 
             // Signals error in http protocol
          e.printStackTrace();
 
             //Log Errors Here
-
-
 
      } catch (IOException e) {
           e.printStackTrace();
@@ -66,7 +61,6 @@ public class ApiConnector {
                 e.printStackTrace();
             }
         }
-
         return jsonArray;
 
 

@@ -1,9 +1,11 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +20,13 @@ public class register extends ActionBarActivity {
     EditText email;
     EditText password;
     EditText repassword;
+    EditText sirname;
+
+    String forCheckEmail;
+    String part1;
+    String part2;
+    ConnectInsertDel connectServer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,40 +34,70 @@ public class register extends ActionBarActivity {
 
         ImageButton regist = (ImageButton)findViewById(R.id.imageButton);
         name = (EditText)findViewById(R.id.editText3);
-        email = (EditText)findViewById(R.id.editText4);
-        password = (EditText)findViewById(R.id.editText5);
-        repassword = (EditText)findViewById(R.id.editText6);
+        sirname = (EditText)findViewById(R.id.editText4);
+        email = (EditText)findViewById(R.id.editText5);
+        password = (EditText)findViewById(R.id.editText6);
+        repassword = (EditText)findViewById(R.id.editText7);
+
 
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Context context = getApplicationContext();
-                Toast.makeText(context,name.getText().toString()+" "+email.getText().toString()+" "+password.getText().toString()
-                +" "+repassword.getText().toString(),Toast.LENGTH_SHORT).show();
-            }
+                //      Toast.makeText(context,name.getText().toString()+" "+email.getText().toString()+" "+password.getText().toString()
+                //     +" "+repassword.getText().toString(),Toast.LENGTH_SHORT).show();
+
+                //      String[] parts = email.getText().toString().split("@");
+                //      String part1            = parts[0];
+                //      String part2            = parts[1];
+                //      Toast.makeText(context,part1,Toast.LENGTH_SHORT).show();
+
+                if(password.getText().toString().equals(repassword.getText().toString()) ) {
+
+                    if(email.getText().toString().contains("@") ) {
+                        connectServer = new ConnectInsertDel(register.this, "http://naneport.arg.in.th/eatwell/full/test2.php");
+
+                        connectServer.addValue("regisemail", email.getText().toString());
+                        connectServer.addValue("regisname", name.getText().toString());
+                        connectServer.addValue("regissirname", sirname.getText().toString());
+                        connectServer.addValue("regispassword", password.getText().toString());
+                        connectServer.addValue("reregispassword", repassword.getText().toString());
+
+                        connectServer.execute();
+                        Intent intent = new Intent(register.this, MainActivity.class);
+                        startActivity(intent);
+                    }else{Toast.makeText(context,"check @ in email box",Toast.LENGTH_SHORT).show();}
+
+                }else{Toast.makeText(context,"password should be equal  repassword",Toast.LENGTH_SHORT).show();}
+
+            /*
+                try {
+                    connectServer.execute();
+                } catch () {
+                    e.printStackTrace();
+                }
+
+     //           Intent intent = new Intent(register.this, MainActivity.class);
+     //           startActivity(intent);
+
+                //check @ in email box
+                String[] parts = email.getText().toString().split("@");
+                String part1            = parts[0];
+                String part2            = parts[1];
+                //
+
+                if(part1 != null && part2 != null) {
+                   connectServer.execute();
+                }
+                else
+                {
+              //      Toast.makeText(context,"please do some shit with @ in email box fuck",Toast.LENGTH_SHORT).show();
+                }
+            */}
         });
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_register, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
