@@ -15,23 +15,41 @@ import android.content.Intent;
 import android.view.View;
 
 
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    private ListView testGet;
+
+    ConnectServer connectServer;
+    ArrayList<String> emaillist,name;
+    ArrayAdapter<String> arrayAdapter;
+
+    // test ดึงค่า
     EditText email;
     EditText password;
+    //
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +57,13 @@ public class MainActivity extends ActionBarActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         Log.d("Chonlaphoom", "onCreateMain");
         setContentView(R.layout.activity_main);
+
+        connectServer = new ConnectServer(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/test.php");
+        connectServer.execute();
+
+        this.testGet = (ListView) this.findViewById(R.id.textView2);
+
+    //    new GetAllCustomerTask().execute(new ApiConnector());
 
         //In this next line, note that 'btn' will never be used, it's
         //grayed out in the "Button btn...", and in the (R.id.btn) it is
@@ -57,7 +82,10 @@ public class MainActivity extends ActionBarActivity {
                 Context context = getApplicationContext();
 
                 Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
-
+                ConnectServer connectServer = new ConnectServer(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");;
+                connectServer.addValue("loginemail",email.getText().toString());
+                connectServer.addValue("loginpassword",password.getText().toString());
+                connectServer.execute();
                 //go to recommend
                 Intent intent = new Intent(MainActivity.this, NewFeeds.class);
                 startActivity(intent);
@@ -143,19 +171,67 @@ public class MainActivity extends ActionBarActivity {
 
         }
     }
+/*
+    public void setTextToView(JSONArray jsonArray)
+    {
+        String s  = "";
+        for(int i=0; i<jsonArray.length();i++){
+     //   System.out.println(jsonArray.length());
+
+            JSONObject json = null;
+            try {
+                json = jsonArray.getJSONObject(i);
+                s = s + "Email : "+json.getString("email")+"Sirname : "+json.getString("sirname")+"\n" +"\n\n";
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        this.testGet.setText(""+s);
+    }
 
     private class GetAllCustomerTask extends AsyncTask<ApiConnector,Long,JSONArray>
     {
+
+
         @Override
         protected JSONArray doInBackground(ApiConnector... params) {
-            return null;
+            // it is executed on background thread
+           return params[0].GetAllCustomer();
         }
 
         @Override
-        protected void OnPostExecute(JSONArray jsonArray)
+        protected void onPostExecute(JSONArray jsonArray)
         {
+        //    setTextToView(jsonArray);
 
         }
+
+
+    }
+*/
+
+
+    public void cannotConnectToServer() {
+        Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับ Server", Toast.LENGTH_LONG).show();
+    }
+
+    //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
+    public void errorConnectToServer() {
+        Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
+    }
+
+
+    public void setList(ArrayList<String> input)
+    {
+        emaillist = input;
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,this.emaillist);
+        testGet.setAdapter(arrayAdapter);
+        //testGet.setText(""+emaillist.get(0));
+     //   Toast.makeText(this,"email ="+emaillist.get(0) , Toast.LENGTH_LONG).show();
+        //System.out.println(emaillist.get(0));
     }
 
 }
