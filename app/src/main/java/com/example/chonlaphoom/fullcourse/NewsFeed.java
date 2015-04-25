@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -46,6 +48,16 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
      * Views.
      */
     private ListAdapter mAdapter;
+
+    //############################TAN List Item###################################
+    private int[] flag = new int[]{
+            R.drawable.icon_home,
+            R.drawable.icon_fullcourse,
+            R.drawable.icon_fav,
+            R.drawable.icon_sub,
+            R.drawable.icon_logout
+    };
+    //##########################################################################
 
     // TODO: Rename and change types of parameters
     public static NewsFeed newInstance(String param1, String param2) {
@@ -84,9 +96,21 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newsfeed_grid, container, false);
 
-        // Set the adapter
+        //###################################TAN Adaptor##############################################
+        String[] from = {"flag","text"};
+        int[] to = {R.id.fc_pic};
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+        for(int i=0;i<5;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("flag", Integer.toString(flag[i]));
+            aList.add(hm);
+        }
+        SimpleAdapter TanAdapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
+        //###########################################################################################
+
+        // Set the adapter , ****Choose between TanAdapter/mAdapter*****
         mListView = (AbsListView) view.findViewById(android.R.id.list);
-        ((AdapterView) mListView).setAdapter(mAdapter);
+        ((AdapterView) mListView).setAdapter(TanAdapter);
 
         // Set OnItemClickListener so we can be notified on item clicks
         mListView.setOnItemClickListener(this);
