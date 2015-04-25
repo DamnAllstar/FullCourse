@@ -68,6 +68,7 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
 
     private int[] flag = new int[]{
+            R.drawable.icon_home,
             R.drawable.icon_fullcourse,
             R.drawable.icon_fav,
             R.drawable.icon_sub,
@@ -119,11 +120,12 @@ public class NavigationDrawerFragment extends Fragment {
         String[] from = {"flag"};
         int[] to = {R.id.icon_list};
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
-        for(int i=0;i<4;i++){
+        for(int i=0;i<5;i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("flag", Integer.toString(flag[i]));
             aList.add(hm);
         }
+
 
         SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
 

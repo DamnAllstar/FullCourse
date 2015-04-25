@@ -19,7 +19,7 @@
     <string name="title_activity_my_review">MyReview</string>
     <string name="title_activity_food_review">FoodReview</string>
     <string name="title_activity_new_feeds">NewFeeds</string>
-    <string name="title_section0">NewFeeds</string>
+    <string name="title_section0">Home</string>
     <string name="title_section1">My Favorites</string>
     <string name="title_section2">My FullCourses</string>
     <string name="title_section3">Subscribe</string>
@@ -32,6 +32,8 @@
     <string name="title_activity_GMap">Map</string>
     <string name="app_id">1639172389636496</string>
 
+
+    <string name="fragment_newsfeed_list">newsfeed</string>
     <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
         AIzaSyC8vmcJWEsGjglkb7gdXoOg5Yz1SzuHgEs
     </string>

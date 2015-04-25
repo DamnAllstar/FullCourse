@@ -1,17 +1,16 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,15 +18,10 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 
 public class NewFeeds extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener{
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -45,7 +39,7 @@ public class NewFeeds extends ActionBarActivity
         setContentView(R.layout.activity_new_feeds);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        //mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -55,22 +49,27 @@ public class NewFeeds extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+
         Fragment objFragment = null;
 
         switch(position){
             case 0:
+                objFragment = new newfeeds_Fragment();
+                mTitle="Home";
+                break;
+            case 1:
                 objFragment = new menu1_Fragment();
                 mTitle="My FullCourses";
                 break;
-            case 1:
+            case 2:
                 objFragment = new menu2_Fragment();
                 mTitle="My Favorites";
                 break;
-            case 2:
+            case 3:
                 objFragment = new menu3_Fragment();
                 mTitle="Subscribe";
                 break;
-            case 3:
+            case 4:
                 objFragment = new menu4_Fragment();
                 mTitle="Logout";
                 break;
@@ -85,15 +84,18 @@ public class NewFeeds extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.title_section0);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.title_section2);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.title_section1);
                 break;
             case 4:
+                mTitle = getString(R.string.title_section3);
+                break;
+            case 5:
                 mTitle = getString(R.string.title_section4);
                 break;
         }
@@ -135,6 +137,10 @@ public class NewFeeds extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onFragmentInteraction(String id) {
+
+    }
 
     /**
      * A placeholder fragment containing a simple view.

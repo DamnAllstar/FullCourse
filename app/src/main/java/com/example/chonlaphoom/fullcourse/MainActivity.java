@@ -15,9 +15,11 @@ import android.content.Intent;
 import android.view.View;
 
 
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
@@ -26,12 +28,18 @@ import org.json.JSONArray;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity {
 
     EditText email;
     EditText password;
+    ArrayList<String> list;
+    ArrayAdapter<String> arrayAdapter;
+    ConnectServer connectServer;
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +55,7 @@ public class MainActivity extends ActionBarActivity {
         ImageButton btn = (ImageButton)findViewById(R.id.btnStartAnotherActivity);
         ImageButton btn2 = (ImageButton)findViewById(R.id.btnStartAnotherActivity2);
         Button mewmew = (Button)findViewById(R.id.MP);
+
         email = (EditText)findViewById(R.id.editText2);
         password =(EditText)findViewById(R.id.editText);
 
@@ -57,6 +66,11 @@ public class MainActivity extends ActionBarActivity {
                 Context context = getApplicationContext();
 
                 Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
+
+                ConnectServer connectServer = new ConnectServer(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");
+                connectServer.addValue("editeText2",email.getText().toString());
+                connectServer.addValue("editeText",password.getText().toString());
+                connectServer.execute();
 
                 //go to recommend
                 Intent intent = new Intent(MainActivity.this, NewFeeds.class);
@@ -143,19 +157,19 @@ public class MainActivity extends ActionBarActivity {
 
         }
     }
-
-    private class GetAllCustomerTask extends AsyncTask<ApiConnector,Long,JSONArray>
-    {
-        @Override
-        protected JSONArray doInBackground(ApiConnector... params) {
-            return null;
-        }
-
-        @Override
-        protected void OnPostExecute(JSONArray jsonArray)
-        {
-
-        }
+    ///ถ้าไม่สามารถเชื่อมต่อกับ Server ได้จะมาทำงานที่ Function นี้
+    public void cannotConnectToServer() {
+        Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับ Server", Toast.LENGTH_LONG).show();
     }
 
+    //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
+    public void errorConnectToServer() {
+        Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
+    }
+
+    public void setList(ArrayList<String> list){
+        this.list = list;
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, this.list);
+        listView.setAdapter(arrayAdapter);
+    }
 }

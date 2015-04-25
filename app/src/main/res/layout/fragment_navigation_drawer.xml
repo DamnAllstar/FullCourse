@@ -15,4 +15,4 @@
     android:choiceMode="singleChoice"
     android:divider="@android:color/transparent"
     android:dividerHeight="0dp"
-    android:background="#ff3f3e3f" tools:context=".NavigationDrawerFragment" />
+    android:background="#f2c014" tools:context=".NavigationDrawerFragment" />

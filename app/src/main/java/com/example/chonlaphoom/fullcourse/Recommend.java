@@ -1,25 +1,28 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.widget.Button;
-import android.view.Menu;
-import android.view.MenuItem;
 
+public class Recommend extends ActionBarActivity implements NewsFeed.OnFragmentInteractionListener {
 
-public class Recommend extends ActionBarActivity implements View.OnClickListener {
-
-    Button btnDone;
+    //Button btnDone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
 
-        btnDone = (Button) findViewById(R.id.btnDone);
-        btnDone.setOnClickListener(this);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new NewsFeed())
+                    .commit();
+        }
+
+        //btnDone = (Button) findViewById(R.id.btnDone);
+        //btnDone.setOnClickListener((View.OnClickListener) this);
+
     }
 
     public void onClick(View view) {
@@ -30,4 +33,8 @@ public class Recommend extends ActionBarActivity implements View.OnClickListener
     }
 
 
+    @Override
+    public void onFragmentInteraction(String id) {
+
+    }
 }

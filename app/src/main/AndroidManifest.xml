@@ -104,6 +104,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".NewsFeed"
+            android:label="@string/fragment_newsfeed_list"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
+        </activity>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
