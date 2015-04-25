@@ -16,18 +16,18 @@ import android.view.ViewGroup;
 /**
  * Created by Thanaphon on 4/10/2015.
  */
-public class newfeeds_Fragment extends android.support.v4.app.Fragment /*implements NewsFeed.OnFragmentInteractionListener*/ {
-/*
+public class newfeeds_Fragment extends android.support.v4.app.Fragment implements NewsFeed.OnFragmentInteractionListener {
+
     //Button btnDone;
     //##########################Tynk's Original#####################################
-    private FragmentActivity context;
+/*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setContentView(R.layout.fragment_new_feeds);
 
         if (savedInstanceState == null) {
-            context.getSupportFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
                     .add(R.id.container, new NewsFeed())
                     .commit();
         }
@@ -35,7 +35,7 @@ public class newfeeds_Fragment extends android.support.v4.app.Fragment /*impleme
         //btnDone = (Button) findViewById(R.id.btnDone);
         //btnDone.setOnClickListener((View.OnClickListener) this);
 
-    }
+    }*/
 
 
 
@@ -43,7 +43,7 @@ public class newfeeds_Fragment extends android.support.v4.app.Fragment /*impleme
     public void onFragmentInteraction(String id) {
 
     }
-*/
+
     //#####################################################################
 
     //#################Tan's Fragment Edition#######################################
@@ -51,7 +51,13 @@ public class newfeeds_Fragment extends android.support.v4.app.Fragment /*impleme
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        rootview = inflater.inflate(R.layout.activity_newfeed,container,false);
+        rootview = inflater.inflate(R.layout.fragment_new_feeds,container,false);
+
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new NewsFeed())
+                    .commit();
+        }
 
         return rootview;
     }
