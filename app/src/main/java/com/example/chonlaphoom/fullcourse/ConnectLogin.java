@@ -38,6 +38,10 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
     private DialogConnect dialogConnect;
     private Context context;
 
+    public String  get;
+    public ArrayList<String> email = new ArrayList<String>();
+    public ArrayList<String> name = new ArrayList<String>();
+
     ConnectLogin(Context context,String URL){
         this.context = context;
 
@@ -55,6 +59,7 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
 
     //Function สำหรับเพิ่มตัวแปรในการส่งค่าแบบ Post
     public void addValue(String key, String value){
+
         nameValuePairs.add(new BasicNameValuePair(key, value));
     }
 
@@ -67,7 +72,7 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
     protected String doInBackground(String... params) {
         InputStream is = null;
         String result = null;
-
+        get="doInBack";
         //เริ่มการเชื่อมต่กับ Server
         try {
             //ทำการส่งตัวแปรต่างๆ ในรูปแบบของ UTF-8
@@ -103,8 +108,7 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
     //ถ้าทำงานที่ doInBackground เสร็จแล้ว จะมาทำงานที่ Function นี้
     protected void onPostExecute(String result) {
         //list ที่ใช้เก็บข้อมูล
-        ArrayList<String> email = new ArrayList<String>();
-        ArrayList<String> name = new ArrayList<String>();
+
 
 
         //ถ้า result เป็น null คือ ไม่สามารถเชื่อมต่อกับ server ได้
@@ -120,7 +124,8 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
                 if(jObject.getString("status").equals("OK")){
                     //แปลงผลลัพธ์ที่ได้มาเป็น JSON Array
                     JSONArray jResult = jObject.getJSONArray("result");
-
+                    get = "OK";
+                 //   email.add("OK");
 
                     //ดึงขนาดของข้อมูลใน jResult
                     int size = jResult.length();
@@ -139,6 +144,7 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
 
                     //ถ้าดึงข้อมูลจาก database มีปัญหาจะแสดง error
                 }else{
+
                     ((MainActivity)context).errorConnectToServer();
                 }
                 ((MainActivity)context).setList(email);
@@ -147,6 +153,7 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้
             } catch (JSONException e) {
                 Log.e("ConnectServer", "Error parsing data " + e.toString() + "/" + result);
+
                 ((MainActivity)context).errorConnectToServer();
             }
 
@@ -156,5 +163,12 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
         }
 
         dialogConnect.dismiss();
+    }
+
+    public String returnValue()
+    {
+        return get;
+
+
     }
 }
