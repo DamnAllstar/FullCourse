@@ -169,6 +169,8 @@ public class MainActivity extends ActionBarActivity {
 
     public void setList(ArrayList<String> list){
         this.list = list;
+
+
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, this.list);
         listView.setAdapter(arrayAdapter);
     }

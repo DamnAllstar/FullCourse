@@ -4,41 +4,41 @@ package com.example.chonlaphoom.fullcourse;
 /**
  * Created by nuttnarok on 4/10/2015.
  */
-        import java.io.BufferedReader;
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.io.InputStreamReader;
-        import java.util.ArrayList;
-        import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
-        import org.apache.http.HttpEntity;
-        import org.apache.http.HttpResponse;
-        import org.apache.http.NameValuePair;
-        import org.apache.http.client.ClientProtocolException;
-        import org.apache.http.client.HttpClient;
-        import org.apache.http.client.entity.UrlEncodedFormEntity;
-        import org.apache.http.client.methods.HttpPost;
-        import org.apache.http.impl.client.DefaultHttpClient;
-        import org.apache.http.message.BasicNameValuePair;
-        import org.apache.http.protocol.HTTP;
-        import org.json.JSONArray;
-        import org.json.JSONException;
-        import org.json.JSONObject;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-        import android.content.Context;
-        import android.content.Intent;
-        import android.os.AsyncTask;
-        import android.support.v7.app.ActionBarActivity;
-        import android.util.Log;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 
-public class ConnectServer extends AsyncTask<String, Integer, String> {
+public class ConnectLogin extends AsyncTask<String, Integer, String> {
     private HttpPost httppost;
     private HttpClient httpclient;
     private List<NameValuePair> nameValuePairs;
     private DialogConnect dialogConnect;
     private Context context;
 
-    ConnectServer(Context context,String URL){
+    ConnectLogin(Context context,String URL){
         this.context = context;
 
         //สร้างส่วนประกอบที่จำเป็นในการเชื่อมกับ Server

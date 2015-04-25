@@ -68,7 +68,7 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
 
     private int[] flag = new int[]{
-       //     R.drawable.icon_home,
+            R.drawable.icon_home,
             R.drawable.icon_fullcourse,
             R.drawable.icon_fav,
             R.drawable.icon_sub,
