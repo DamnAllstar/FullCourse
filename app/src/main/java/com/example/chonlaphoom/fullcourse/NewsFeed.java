@@ -69,14 +69,14 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         super.onCreate(savedInstanceState);
 
         exampleListItemList = new ArrayList();
-        exampleListItemList.add(new NFItemlist("Example 1"));
-        exampleListItemList.add(new NFItemlist("Example 2"));
-        exampleListItemList.add(new NFItemlist("Example 3"));
-        exampleListItemList.add(new NFItemlist("FuckSample"));
-        exampleListItemList.add(new NFItemlist("Example 4"));
-        exampleListItemList.add(new NFItemlist("Example 5"));
-        exampleListItemList.add(new NFItemlist("Example 6"));
-        exampleListItemList.add(new NFItemlist("FuckSample"));
+        exampleListItemList.add(new NFItemlist("Example 1",R.drawable.icon_home));
+        exampleListItemList.add(new NFItemlist("Example 2",R.drawable.icon_fav));
+        exampleListItemList.add(new NFItemlist("Example 3",R.drawable.icon_fullcourse));
+        exampleListItemList.add(new NFItemlist("FuckSample",R.drawable.icon_logout));
+        exampleListItemList.add(new NFItemlist("Example 4",R.drawable.icon_sub));
+        exampleListItemList.add(new NFItemlist("Example 5",R.drawable.icon_home));
+        exampleListItemList.add(new NFItemlist("Example 6",R.drawable.icon_fav));
+        exampleListItemList.add(new NFItemlist("FuckSample",R.drawable.icon_logout));
         mAdapter = new NFAdapterlist(getActivity(), exampleListItemList);
     }
     @Override
