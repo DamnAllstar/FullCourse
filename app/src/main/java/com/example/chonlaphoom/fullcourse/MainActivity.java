@@ -73,6 +73,10 @@ public class MainActivity extends ActionBarActivity {
                 connectServer.addValue("editeText",password.getText().toString());
                 connectServer.execute();
 
+                //#################for checking home page##################################
+                Intent intent = new Intent(MainActivity.this, NewFeeds.class);
+                startActivity(intent);
+                //########################################################################
          /*
                 if(setList(list)=="success"){
                     Toast.makeText(context, "Login success", Toast.LENGTH_LONG).show();

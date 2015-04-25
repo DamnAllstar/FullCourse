@@ -1,4 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
+
+import android.widget.ImageView;
+
 /**
  * Created by amin on 4/23/2015.
  */
@@ -6,6 +9,7 @@ public class NFItemlist {
 
 
     private String itemTitle;
+    private int flag;
 
     public String getItemTitle() {
         return itemTitle;
@@ -16,7 +20,8 @@ public class NFItemlist {
     }
 
 
-    public NFItemlist(String title){
+    public NFItemlist(String title , int flag){
         this.itemTitle = title;
+        this.flag = flag;
     }
 }
