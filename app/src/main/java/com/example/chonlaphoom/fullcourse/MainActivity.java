@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
     EditText email;
     EditText password;
  // public   ArrayList<String> list;
- public   String list;
+ public   ArrayList<String> list;
   public   String get;
     ArrayAdapter<String> arrayAdapter;
   //  ConnectServer connectServer;
@@ -69,18 +69,15 @@ public class MainActivity extends ActionBarActivity {
 
                 connectServer = new ConnectServer(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");
 
-
                 connectServer.addValue("loginemail",email.getText().toString());
                 connectServer.addValue("loginpassword",password.getText().toString());
+
                 connectServer.execute();
-                get = connectServer.returnValue();
-                Toast.makeText(context,get, Toast.LENGTH_SHORT).show();
+
+              //  get = connectServer.returnValue();
 
 
-                //#################for checking home page##################################
-                Intent intent = new Intent(MainActivity.this, NewFeeds.class);
-                startActivity(intent);
-                //########################################################################
+
          /*
                 if(setList(list)=="success"){
                     Toast.makeText(context, "Login success", Toast.LENGTH_LONG).show();
@@ -182,17 +179,27 @@ public class MainActivity extends ActionBarActivity {
 
     //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
     public void errorConnectToServer() {
-        Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
+    //    Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "login fail", Toast.LENGTH_LONG).show();
+
     }
 
-    public void setList(ArrayList<String> List){
+    public void setList(ArrayList<String> email){
 
-
-        list = List.get(0);
-
-        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, List);
-        listView.setAdapter(arrayAdapter);
         Context context = getApplicationContext();
+        list = email;
+        get = String.valueOf(list.get(0));
+        if(get != null) {
+            //#################for checking home page##################################
+            Intent intent = new Intent(MainActivity.this, NewFeeds.class);
+            startActivity(intent);
+            //########################################################################
+            Toast.makeText(context,"login success", Toast.LENGTH_SHORT).show();
+        }
+
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
+     //   listView.setAdapter(arrayAdapter);
+
     //    if(list.get(0).equals(test)) {
     //        return "success";
      //   }else{
