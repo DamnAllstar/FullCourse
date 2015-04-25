@@ -9,7 +9,6 @@ public class NFItemlist {
 
 
     private String itemTitle;
-    private int flag;
 
     public String getItemTitle() {
         return itemTitle;
@@ -20,8 +19,7 @@ public class NFItemlist {
     }
 
 
-    public NFItemlist(String title , int flag){
+    public NFItemlist(String title){
         this.itemTitle = title;
-        this.flag = flag;
     }
 }
