@@ -45,21 +45,21 @@
    android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
 -->
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/icon_list"
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>-->
 
     <ImageView
         android:id="@+id/fc_pic"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="240dp"/>
 
     <ImageView
         android:id="@+id/fc_shadow"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="240dp"
         android:background="@android:color/transparent" />
 
     <TextView

@@ -80,7 +80,7 @@
         <activity
             android:name=".NewFeeds"
             android:label="@string/title_activity_new_feeds"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
+            android:theme="@style/AppBaseTheme" >
         </activity>
         <activity
             android:name=".register"
@@ -108,7 +108,7 @@
         <activity
             android:name=".NewsFeed"
             android:label="@string/fragment_newsfeed_list"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" >
+            android:theme="@style/AppBaseTheme" >
         </activity>
 
         <activity android:name="com.facebook.FacebookActivity"

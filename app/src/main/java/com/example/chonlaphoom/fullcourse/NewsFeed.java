@@ -65,10 +65,7 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
             R.drawable.food_8,
             R.drawable.food_9,
             R.drawable.food_10,
-            R.drawable.food_11,
-            R.drawable.food_12,
-            R.drawable.food_13,
-            R.drawable.food_14
+            R.drawable.food_11
     };
 
     private int[] shadow = new int[]{
@@ -83,9 +80,7 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
             R.drawable.shadow,
             R.drawable.shadow,
             R.drawable.shadow,
-            R.drawable.shadow,
-            R.drawable.shadow,
-            R.drawable.shadow,
+
     };
 
     private String[] detail = new String[]{
@@ -99,10 +94,8 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
             "Test8 jaa",
             "Test9 jaa",
             "Test10 jaa",
-            "Test11 jaa",
-            "Test12 jaa",
-            "Test13 jaa",
-            "Test14 jaa"
+            "Test11 jaa"
+
     };
     //##########################################################################
 
@@ -157,40 +150,40 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         tabPopular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.icon_home);
-                tabRecently.setBackgroundResource(R.drawable.icon_fav);
-                tabAroundYou.setBackgroundResource(R.drawable.icon_full);
-                tabLowCost.setBackgroundResource(R.drawable.icon_logout);
+                v.setBackgroundResource(R.drawable.tab_2);
+                tabRecently.setBackgroundResource(R.drawable.tab_1);
+                tabAroundYou.setBackgroundResource(R.drawable.tab_1);
+                tabLowCost.setBackgroundResource(R.drawable.tab_1);
             }
         });
 
         tabRecently.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.icon_home);
-                tabPopular.setBackgroundResource(R.drawable.icon_sub);
-                tabAroundYou.setBackgroundResource(R.drawable.icon_full);
-                tabLowCost.setBackgroundResource(R.drawable.icon_logout);
+                v.setBackgroundResource(R.drawable.tab_2);
+                tabPopular.setBackgroundResource(R.drawable.tab_1);
+                tabAroundYou.setBackgroundResource(R.drawable.tab_1);
+                tabLowCost.setBackgroundResource(R.drawable.tab_1);
             }
         });
 
         tabAroundYou.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.icon_home);
-                tabPopular.setBackgroundResource(R.drawable.icon_sub);
-                tabRecently.setBackgroundResource(R.drawable.icon_fav);
-                tabLowCost.setBackgroundResource(R.drawable.icon_logout);
+                v.setBackgroundResource(R.drawable.tab_2);
+                tabPopular.setBackgroundResource(R.drawable.tab_1);
+                tabRecently.setBackgroundResource(R.drawable.tab_1);
+                tabLowCost.setBackgroundResource(R.drawable.tab_1);
             }
         });
 
         tabLowCost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.icon_home);
-                tabPopular.setBackgroundResource(R.drawable.icon_sub);
-                tabRecently.setBackgroundResource(R.drawable.icon_fav);
-                tabAroundYou.setBackgroundResource(R.drawable.icon_full);
+                v.setBackgroundResource(R.drawable.tab_2);
+                tabPopular.setBackgroundResource(R.drawable.tab_1);
+                tabRecently.setBackgroundResource(R.drawable.tab_1);
+                tabAroundYou.setBackgroundResource(R.drawable.tab_1);
             }
         });
         //###########################################################################################
@@ -199,7 +192,7 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         String[] from = {"flag2","shadow","text"};
         int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
-        for(int i=0;i<14;i++){
+        for(int i=0;i<11;i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("flag2", Integer.toString(flag[i]));
             hm.put("shadow", Integer.toString(shadow[i]));

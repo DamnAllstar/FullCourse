@@ -127,7 +127,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
 
-        SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
+        SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.drawer_list,from,to);
 
         mDrawerListView.setAdapter(adapter);
         //########################################################################################//
