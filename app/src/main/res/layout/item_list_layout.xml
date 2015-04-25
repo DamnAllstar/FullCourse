@@ -54,12 +54,12 @@
     <ImageView
         android:id="@+id/fc_pic"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="200dp"/>
 
     <ImageView
         android:id="@+id/fc_shadow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:background="@android:color/transparent" />
 
     <TextView
