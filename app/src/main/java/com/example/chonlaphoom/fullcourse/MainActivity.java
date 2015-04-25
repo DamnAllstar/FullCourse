@@ -29,6 +29,7 @@ import org.json.JSONArray;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -37,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
     EditText password;
     ArrayList<String> list;
     ArrayAdapter<String> arrayAdapter;
-    ConnectServer connectServer;
+  //  ConnectServer connectServer;
     ListView listView;
 
     @Override
@@ -65,16 +66,23 @@ public class MainActivity extends ActionBarActivity {
                 //show text from text edit
                 Context context = getApplicationContext();
 
-                Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
-
-                ConnectServer connectServer = new ConnectServer(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");
+            //    Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
+         //       Toast.makeText(context,list.get(0), Toast.LENGTH_LONG).show();
+                ConnectLogin connectServer = new ConnectLogin(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");
                 connectServer.addValue("editeText2",email.getText().toString());
                 connectServer.addValue("editeText",password.getText().toString());
                 connectServer.execute();
 
+         /*
+                if(setList(list)=="success"){
+                    Toast.makeText(context, "Login success", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, NewFeeds.class);
+                    startActivity(intent);
+                }
+                else{Toast.makeText(context, "login fail , please Try again", Toast.LENGTH_LONG).show();}
+            */
                 //go to recommend
-                Intent intent = new Intent(MainActivity.this, NewFeeds.class);
-                startActivity(intent);
+
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -168,10 +176,18 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void setList(ArrayList<String> list){
+        String test = "OK";
         this.list = list;
-
 
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, this.list);
         listView.setAdapter(arrayAdapter);
+        Context context = getApplicationContext();
+    //    if(list.get(0).equals(test)) {
+    //        return "success";
+     //   }else{
+     //       return "fail";
+     //   }
+
+
     }
 }

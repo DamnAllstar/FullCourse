@@ -56,6 +56,8 @@ public class register extends ActionBarActivity {
                 if(password.getText().toString().equals(repassword.getText().toString()) ) {
 
                     if(email.getText().toString().contains("@") ) {
+
+
                         connectServer = new ConnectInsertDel(register.this, "http://naneport.arg.in.th/eatwell/full/test2.php");
 
                         connectServer.addValue("regisemail", email.getText().toString());
@@ -63,7 +65,7 @@ public class register extends ActionBarActivity {
                         connectServer.addValue("regissirname", sirname.getText().toString());
                         connectServer.addValue("regispassword", password.getText().toString());
                         connectServer.addValue("reregispassword", repassword.getText().toString());
-
+                        Toast.makeText(context,"Register successed",Toast.LENGTH_SHORT).show();
                         connectServer.execute();
                         Intent intent = new Intent(register.this, MainActivity.class);
                         startActivity(intent);
