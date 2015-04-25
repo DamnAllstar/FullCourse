@@ -34,34 +34,50 @@ public class register extends ActionBarActivity {
 
         ImageButton regist = (ImageButton)findViewById(R.id.imageButton);
         name = (EditText)findViewById(R.id.editText3);
-        email = (EditText)findViewById(R.id.editText4);
-        password = (EditText)findViewById(R.id.editText5);
-        repassword = (EditText)findViewById(R.id.editText6);
-        sirname = (EditText)findViewById(R.id.editText7);
+        sirname = (EditText)findViewById(R.id.editText4);
+        email = (EditText)findViewById(R.id.editText5);
+        password = (EditText)findViewById(R.id.editText6);
+        repassword = (EditText)findViewById(R.id.editText7);
+
 
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Context context = getApplicationContext();
-                Toast.makeText(context,name.getText().toString()+" "+email.getText().toString()+" "+password.getText().toString()
-                +" "+repassword.getText().toString(),Toast.LENGTH_SHORT).show();
+                //      Toast.makeText(context,name.getText().toString()+" "+email.getText().toString()+" "+password.getText().toString()
+                //     +" "+repassword.getText().toString(),Toast.LENGTH_SHORT).show();
 
-                String[] parts = email.getText().toString().split("@");
-                String part1            = parts[0];
-                String part2            = parts[1];
-                Toast.makeText(context,part1,Toast.LENGTH_SHORT).show();
+                //      String[] parts = email.getText().toString().split("@");
+                //      String part1            = parts[0];
+                //      String part2            = parts[1];
+                //      Toast.makeText(context,part1,Toast.LENGTH_SHORT).show();
 
+                if(password.getText().toString().equals(repassword.getText().toString()) ) {
 
-                ConnectServer connectServer = new ConnectServer(register.this, "http://naneport.arg.in.th/eatwell/full/test2.php");
+                    if(email.getText().toString().contains("@") ) {
+                        connectServer = new ConnectInsertDel(register.this, "http://naneport.arg.in.th/eatwell/full/test2.php");
 
-                connectServer.addValue("regisemail",email.getText().toString());
-                connectServer.addValue("regisname",name.getText().toString());
-                connectServer.addValue("regissirname",sirname.getText().toString());
-                connectServer.addValue("regispassword",password.getText().toString());
-                connectServer.addValue("reregispassword",repassword.getText().toString());
-          //      connectServer.execute();
+                        connectServer.addValue("regisemail", email.getText().toString());
+                        connectServer.addValue("regisname", name.getText().toString());
+                        connectServer.addValue("regissirname", sirname.getText().toString());
+                        connectServer.addValue("regispassword", password.getText().toString());
+                        connectServer.addValue("reregispassword", repassword.getText().toString());
+
+                        connectServer.execute();
+                        Intent intent = new Intent(register.this, MainActivity.class);
+                        startActivity(intent);
+                    }else{Toast.makeText(context,"check @ in email box",Toast.LENGTH_SHORT).show();}
+
+                }else{Toast.makeText(context,"password should be equal  repassword",Toast.LENGTH_SHORT).show();}
+
             /*
+                try {
+                    connectServer.execute();
+                } catch () {
+                    e.printStackTrace();
+                }
+
      //           Intent intent = new Intent(register.this, MainActivity.class);
      //           startActivity(intent);
 
