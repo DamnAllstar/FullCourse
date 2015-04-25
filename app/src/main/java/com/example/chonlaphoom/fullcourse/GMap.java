@@ -79,8 +79,15 @@ public class GMap extends FragmentActivity {
             LatLng Input = new LatLng(lat, lng);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Input, 5));
 
-            double[][] AR = new double[2][2];
+
+            int D1=0;
+            int D2 =0;
             Bundle extras = getIntent().getExtras();
+            if (extras != null) {
+                D1 = extras.getInt("D1");
+                D2 = extras.getInt("D2");
+            }
+            double[][] AR = new double[D1][D2];
             if (extras != null) {
                 AR = (double[][]) extras.getSerializable("list");
             }

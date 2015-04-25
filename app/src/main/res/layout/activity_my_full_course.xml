@@ -13,6 +13,21 @@
         android:text="@string/title_section2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="62dp"
+        android:layout_height="77dp"
+        android:id="@+id/imageButton2"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right|top" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"></FrameLayout>
 
 </RelativeLayout>
