@@ -1,12 +1,16 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.location.GpsStatus;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -144,6 +148,53 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newsfeed_grid, container, false);
 
+        //################################Tab Button Zone#############################################
+        final ImageButton tabPopular = (ImageButton) view.findViewById(R.id.tabPopular);
+        final ImageButton tabRecently = (ImageButton) view.findViewById(R.id.tabRecently);
+        final ImageButton tabAroundYou = (ImageButton) view.findViewById(R.id.tabAroundYou);
+        final ImageButton tabLowCost = (ImageButton) view.findViewById(R.id.tabLowCost);
+
+        tabPopular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setBackgroundResource(R.drawable.icon_home);
+                tabRecently.setBackgroundResource(R.drawable.icon_fav);
+                tabAroundYou.setBackgroundResource(R.drawable.icon_full);
+                tabLowCost.setBackgroundResource(R.drawable.icon_logout);
+            }
+        });
+
+        tabRecently.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setBackgroundResource(R.drawable.icon_home);
+                tabPopular.setBackgroundResource(R.drawable.icon_sub);
+                tabAroundYou.setBackgroundResource(R.drawable.icon_full);
+                tabLowCost.setBackgroundResource(R.drawable.icon_logout);
+            }
+        });
+
+        tabAroundYou.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setBackgroundResource(R.drawable.icon_home);
+                tabPopular.setBackgroundResource(R.drawable.icon_sub);
+                tabRecently.setBackgroundResource(R.drawable.icon_fav);
+                tabLowCost.setBackgroundResource(R.drawable.icon_logout);
+            }
+        });
+
+        tabLowCost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setBackgroundResource(R.drawable.icon_home);
+                tabPopular.setBackgroundResource(R.drawable.icon_sub);
+                tabRecently.setBackgroundResource(R.drawable.icon_fav);
+                tabAroundYou.setBackgroundResource(R.drawable.icon_full);
+            }
+        });
+        //###########################################################################################
+
         //###################################TAN Adaptor##############################################
         String[] from = {"flag2","shadow","text"};
         int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
@@ -183,7 +234,24 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         super.onDetach();
         mListener = null;
     }
-
+/*
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.tabPopular :
+                v.setBackgroundResource(R.drawable.icon_home);
+                break;
+            case R.id.tabRecently :
+                v.setBackgroundResource(R.drawable.icon_home);
+                break;
+            case R.id.tabAroundYou :
+                v.setBackgroundResource(R.drawable.icon_home);
+                break;
+            case R.id.tabLowCost :
+                v.setBackgroundResource(R.drawable.icon_home);
+                break;
+        }
+    }*/
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
