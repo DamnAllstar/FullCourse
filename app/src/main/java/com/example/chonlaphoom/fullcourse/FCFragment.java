@@ -197,7 +197,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
                 , Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(FCFragment.this.getActivity(), FCinfo.class);
-        int ID =991092; //Put ID in here!!
+        int ID =99102; //Put ID in here!!
         intent.putExtra("ID",ID);
         startActivity(intent);
     }
