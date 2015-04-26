@@ -9,14 +9,6 @@
     >
 
 
-    <TextView
-        android:text="@string/title_section2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
