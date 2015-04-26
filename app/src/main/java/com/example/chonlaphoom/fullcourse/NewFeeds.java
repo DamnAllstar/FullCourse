@@ -49,7 +49,7 @@ public class NewFeeds extends ActionBarActivity
         Intent intent = new Intent();
         intent = getIntent();
         getUser =  intent.getStringExtra("user");
-        Toast.makeText(this,"This is "+getUser, Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Welcome back "+getUser, Toast.LENGTH_LONG).show();
 
         //connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
         //connectServer.execute();
