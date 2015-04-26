@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class NewFeeds extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener,FCFragment.OnFragmentInteractionListener{
     ArrayList<String> list;
+    ArrayList<Integer> fullcourse_id;
     String get;
     String getUser;
     ArrayAdapter arrayAdapter;
@@ -239,13 +240,16 @@ public class NewFeeds extends ActionBarActivity
     }
 
 
-    public void getRes(ArrayList<String> name , int switch_case){
+    public void getRes(ArrayList<String> name , int switch_case , ArrayList<Integer> fullcourse_id){
 
         Fragment objFragment = null;
         Context context = getApplicationContext();
         list = name;
+        this.fullcourse_id = fullcourse_id;
+
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("popular", list);
+        bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
 
         switch (switch_case) {
             case 0:

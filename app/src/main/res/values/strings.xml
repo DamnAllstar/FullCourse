@@ -33,6 +33,10 @@
     <string name="app_id">1639172389636496</string>
     <string name="activity_fc_info">fcinfo</string>
 
+    <string name="Popular">Popular</string>
+    <string name="Recently">Recently</string>
+    <string name="AroundYou">AroundYou</string>
+    <string name="LowCost">LowCost</string>
 
     <string name="fragment_newsfeed_list">newsfeed</string>
     <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
