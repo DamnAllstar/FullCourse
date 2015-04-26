@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
@@ -49,7 +50,9 @@ public class MainActivity extends ActionBarActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         Log.d("Chonlaphoom", "onCreateMain");
         setContentView(R.layout.activity_main);
+
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "GOTHICI.TTF");
+        Typeface myTypeface2 = Typeface.createFromAsset(getAssets(), "GOTHIC.TTF");
 
         EditText myUsername = (EditText)findViewById(R.id.editText2);
         EditText myPassword = (EditText)findViewById(R.id.editText);
