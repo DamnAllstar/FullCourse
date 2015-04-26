@@ -98,17 +98,6 @@
         <activity
             android:name=".GMap"
             android:label="@string/title_activity_GMap" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".NewsFeed"
-            android:label="@string/fragment_newsfeed_list"
-            android:theme="@style/AppBaseTheme" >
         </activity>
 
         <activity

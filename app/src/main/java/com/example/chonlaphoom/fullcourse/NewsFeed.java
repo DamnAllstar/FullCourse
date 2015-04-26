@@ -28,6 +28,8 @@ import java.util.List;
  * interface.
  */
 public class NewsFeed extends android.support.v4.app.Fragment implements AbsListView.OnItemClickListener {
+
+
     private List exampleListItemList; // at the top of your fragment list
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

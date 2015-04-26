@@ -18,7 +18,7 @@ public class FCinfo extends ActionBarActivity {
             id = extras.getInt("ID");
         }
         TextView text = (TextView) findViewById(R.id.by);
-        text.setText(String.valueOf(id));
+        text.setText("by "+String.valueOf(id));
         text = (TextView) findViewById(R.id.name);
         text.setText("EBI");
         text = (TextView) findViewById(R.id.appetizer);
