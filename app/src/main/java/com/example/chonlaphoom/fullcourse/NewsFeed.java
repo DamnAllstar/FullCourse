@@ -196,7 +196,7 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         String[] from = {"flag2","shadow","text"};
         int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
-        for(int i=0;i<9;i++){
+        for(int i=0;i<rest_name.size();i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("flag2", Integer.toString(flag[i]));
             hm.put("shadow", Integer.toString(shadow[i]));

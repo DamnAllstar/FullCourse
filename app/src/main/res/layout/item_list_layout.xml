@@ -71,7 +71,9 @@
         android:layout_height="fill_parent"
         android:layout_alignBottom="@+id/fc_pic"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignEnd="@+id/fc_pic"
+        android:layout_alignRight="@+id/fc_pic"
         android:layout_marginBottom="-2dp"/>
 
 </RelativeLayout>
