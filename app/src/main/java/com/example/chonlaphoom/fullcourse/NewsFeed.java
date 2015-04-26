@@ -263,11 +263,10 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         NFItemlist item = (NFItemlist) this.exampleListItemList.get(position);
-        Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!"
-                , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(NewsFeed.this.getActivity(), FCinfo.class);
-        int ID =88612; //Put ID in here!!
+        int ID =Integer.parseInt(item.getItemTitle()); //Put ID in here!!
         intent.putExtra("ID",ID);
         startActivity(intent);
 
