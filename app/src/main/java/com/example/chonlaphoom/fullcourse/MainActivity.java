@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
@@ -47,6 +48,13 @@ public class MainActivity extends ActionBarActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         Log.d("Chonlaphoom", "onCreateMain");
         setContentView(R.layout.activity_main);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "GOTHICI.TTF");
+
+        EditText myUsername = (EditText)findViewById(R.id.editText2);
+        EditText myPassword = (EditText)findViewById(R.id.editText);
+        myUsername.setTypeface(myTypeface);
+        myPassword.setTypeface(myTypeface);
+
 
         //In this next line, note that 'btn' will never be used, it's
         //grayed out in the "Button btn...", and in the (R.id.btn) it is

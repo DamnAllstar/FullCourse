@@ -31,6 +31,12 @@
         <item name="background">@drawable/tab_3</item>
     </style>
 
+    <style name="editText">
+        <item name="android:background">@drawable/tab_1</item>
+        <item name="android:textColorHint">#b5151617</item>
+
+
+    </style>
 
 
 </resources>
