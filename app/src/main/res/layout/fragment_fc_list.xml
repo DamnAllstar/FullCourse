@@ -10,4 +10,10 @@
     <TextView android:id="@android:id/empty" android:layout_width="match_parent"
         android:layout_height="match_parent" android:gravity="center" />
 
+    <ImageButton
+        android:layout_width="78dp"
+        android:layout_height="65dp"
+        android:id="@+id/Add"
+        android:layout_gravity="right|top" />
+
 </FrameLayout>

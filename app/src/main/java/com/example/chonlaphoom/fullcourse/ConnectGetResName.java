@@ -28,14 +28,14 @@ import java.util.List;
 /**
  * Created by Chonlaphoom on 4/26/2015.
  */
-public class ConnectGetResName extends AsyncTask {
+public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
     private HttpPost httppost;
     private HttpClient httpclient;
     private List<NameValuePair> nameValuePairs;
     private DialogConnect dialogConnect;
     private Context context;
     public String get;
-
+    public int switch_case;
     ConnectGetResName(Context context,String URL){
         this.context = context;
 
@@ -57,11 +57,9 @@ public class ConnectGetResName extends AsyncTask {
 
     }
 
-    @Override
-    protected Object doInBackground(Object[] params) {
-        return null;
+    public void setCase(int i){
+        switch_case = i;
     }
-
     //ก่อนที่จะทำ doInBackground จะทำงานที่ Function นี้ก่อน
     protected void onPreExecute() {
         dialogConnect.show();
@@ -144,7 +142,7 @@ public class ConnectGetResName extends AsyncTask {
                 }else{
                     ((NewFeeds)context).errorConnectToServer();
                 }
-                ((NewFeeds)context).getRes(name);
+                ((NewFeeds)context).getRes(name,switch_case);
 
 
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้

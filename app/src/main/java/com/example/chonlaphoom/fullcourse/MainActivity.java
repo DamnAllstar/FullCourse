@@ -33,8 +33,9 @@ public class MainActivity extends ActionBarActivity {
     EditText email;
     EditText password;
  // public   ArrayList<String> list;
- public   ArrayList<String> list;
-  public   String get;
+    public ArrayList<String> list;
+    public String get;
+    public String identify;
     ArrayAdapter<String> arrayAdapter;
   //  ConnectServer connectServer;
     ListView listView;
@@ -197,12 +198,17 @@ public class MainActivity extends ActionBarActivity {
         Context context = getApplicationContext();
         list = email;
         get = String.valueOf(list.get(0));
+        identify = get;
+     //   get = connectServer.returnValue();
         if(get != null) {
             //#################for checking home page##################################
             Intent intent = new Intent(MainActivity.this, NewFeeds.class);
+            intent.putExtra("user",identify);
             startActivity(intent);
             //########################################################################
             Toast.makeText(context,"login success", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(context,identify, Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(context,get, Toast.LENGTH_SHORT).show();
         }
 
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
@@ -217,5 +223,9 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    public String getUser()
+    {
+        return identify;
+    }
 
 }

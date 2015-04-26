@@ -1,9 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.location.GpsStatus;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +28,8 @@ import java.util.List;
  * interface.
  */
 public class NewsFeed extends android.support.v4.app.Fragment implements AbsListView.OnItemClickListener {
+
+
     private List exampleListItemList; // at the top of your fragment list
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -141,12 +141,16 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newsfeed_grid, container, false);
 
+        Bundle bundle = getArguments();
+        ArrayList<String> rest_name = bundle.getStringArrayList("popular");
+        //Log.d("test",String.valueOf(rest_name.get(0)));
+
         //################################Tab Button Zone#############################################
         final ImageButton tabPopular = (ImageButton) view.findViewById(R.id.tabPopular);
         final ImageButton tabRecently = (ImageButton) view.findViewById(R.id.tabRecently);
         final ImageButton tabAroundYou = (ImageButton) view.findViewById(R.id.tabAroundYou);
         final ImageButton tabLowCost = (ImageButton) view.findViewById(R.id.tabLowCost);
-
+        tabPopular.setBackgroundResource(R.drawable.tab_2);
         tabPopular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,11 +196,11 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         String[] from = {"flag2","shadow","text"};
         int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
-        for(int i=0;i<11;i++){
+        for(int i=0;i<9;i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("flag2", Integer.toString(flag[i]));
             hm.put("shadow", Integer.toString(shadow[i]));
-            hm.put("text", detail[i]);
+            hm.put("text", String.valueOf(rest_name.get(i)));
             aList.add(hm);
         }
         SimpleAdapter TanAdapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
@@ -251,6 +255,12 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         NFItemlist item = (NFItemlist) this.exampleListItemList.get(position);
         Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!"
                 , Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(NewsFeed.this.getActivity(), FCinfo.class);
+        int ID =88612; //Put ID in here!!
+        intent.putExtra("ID",ID);
+        startActivity(intent);
+
     }
 
     /**

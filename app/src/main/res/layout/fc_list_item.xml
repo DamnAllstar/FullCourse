@@ -8,18 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="92dp">
 
-        <ImageView
+        <!--Not Add Button-->
+        <ImageButton
             android:layout_width="99dp"
             android:layout_height="match_parent"
             android:id="@+id/imageView3"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"/>
 
         <TextView
             android:layout_width="221dp"
             android:layout_height="43dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView4"
+            android:id="@+id/titleTextView"
             android:layout_gravity="right|top" />
 
         <TextView

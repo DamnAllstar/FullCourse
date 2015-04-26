@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -53,9 +56,14 @@ public class newfeeds_Fragment extends android.support.v4.app.Fragment implement
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         rootview = inflater.inflate(R.layout.fragment_new_feeds,container,false);
 
+        Bundle bundle = getArguments(); //get bundle
+
+        NewsFeed newFeeds = new NewsFeed();
+
         if (savedInstanceState == null) {
+            newFeeds.setArguments(bundle); //pass bundle
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new NewsFeed())
+                    .add(R.id.container, newFeeds)
                     .commit();
         }
 

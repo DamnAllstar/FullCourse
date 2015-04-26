@@ -31,6 +31,7 @@
     <string name="subscribe">Subscribe</string>
     <string name="title_activity_GMap">Map</string>
     <string name="app_id">1639172389636496</string>
+    <string name="activity_fc_info">fcinfo</string>
 
 
     <string name="fragment_newsfeed_list">newsfeed</string>

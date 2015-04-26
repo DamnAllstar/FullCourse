@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -21,10 +22,13 @@ public class NewFeeds extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener,FCFragment.OnFragmentInteractionListener{
     ArrayList<String> list;
     String get;
+    String getUser;
     ArrayAdapter arrayAdapter;
     ListView listView;
 
     ConnectGetResName connectServer;
+
+    MainActivity mainActivity = new MainActivity();
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -39,6 +43,12 @@ public class NewFeeds extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_feeds);
+
+
+        Intent intent = new Intent();
+        intent = getIntent();
+        getUser =  intent.getStringExtra("user");
+        Toast.makeText(this,"This is "+getUser, Toast.LENGTH_LONG).show();
 
         //connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
         //connectServer.execute();
@@ -57,36 +67,58 @@ public class NewFeeds extends ActionBarActivity
 
         Fragment objFragment = null;
 
+
+        //Bundle bundle = new Bundle();
         switch(position){
             case 0:
-                objFragment = new newfeeds_Fragment();
-                mTitle="Home";
+                //objFragment = new newfeeds_Fragment();
+                //mTitle="Home";
+                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+                connectServer.setCase(position);
+                connectServer.execute();
                 break;
             case 1:
+                /*
                 objFragment = new menu1_Fragment();
                 mTitle="My FullCourses";
+                */
+                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+                connectServer.setCase(position);
+                connectServer.execute();
                 break;
             case 2:
+                /*
                 objFragment = new menu2_Fragment();
-                mTitle="My Favorites";
+                mTitle="My Favorites";*/
+                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+                connectServer.setCase(position);
+                connectServer.execute();
                 break;
             case 3:
+                /*
                 objFragment = new menu3_Fragment();
-                mTitle="Subscribe";
+                mTitle="Subscribe";*/
+                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+                connectServer.setCase(position);
+                connectServer.execute();
                 break;
             case 4:
-                objFragment = new menu4_Fragment();
-                mTitle="Logout";
+                /*objFragment = new menu4_Fragment();
+                mTitle="Logout";*/
+                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+                connectServer.setCase(position);
+                connectServer.execute();
                 break;
         }
-        connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
-        connectServer.execute();
         // update the main content by replacing fragments
+        /*
+        objFragment.setArguments(bundle);
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction()
                 .replace(R.id.container, objFragment)
                 .commit();
+                */
     }
 
     public void onSectionAttached(int number) {
@@ -207,18 +239,50 @@ public class NewFeeds extends ActionBarActivity
     }
 
 
-    public void getRes(ArrayList<String> name){
+    public void getRes(ArrayList<String> name , int switch_case){
 
+        Fragment objFragment = null;
         Context context = getApplicationContext();
         list = name;
-        get = String.valueOf(list.get(0));
-        Toast.makeText(this, get, Toast.LENGTH_LONG).show();
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("popular", list);
 
-        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
+        switch (switch_case) {
+            case 0:
+                objFragment = new newfeeds_Fragment();
+                mTitle = "Home";
 
+                break;
+            case 1:
+                Log.d("test", "case 1");
+                objFragment = new menu1_Fragment();
+                mTitle = "My FullCourses";
 
+                break;
+            case 2:
+                objFragment = new menu2_Fragment();
+                mTitle = "My Favorites";
+                break;
+            case 3:
+                objFragment = new menu3_Fragment();
+                mTitle = "Subscribe";
+                break;
+            case 4:
+                objFragment = new menu4_Fragment();
+                mTitle = "Logout";
+                break;
+        }
 
+        objFragment.setArguments(bundle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, objFragment)
+                .commit();
+        //get = String.valueOf(list.get(0));
+        //Toast.makeText(this, get, Toast.LENGTH_LONG).show();
+
+        //arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
     }
-
 
 }

@@ -50,9 +50,9 @@ public class FCAdapterlist extends ArrayAdapter {
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
             if(useList){
-                viewToUse = mInflater.inflate(R.layout.newsfeed_list_item, null);
+                viewToUse = mInflater.inflate(R.layout.fc_list_item, null);
             } else {
-                viewToUse = mInflater.inflate(R.layout.newsfeed_grid_item, null);
+                viewToUse = mInflater.inflate(R.layout.fc_grid_item, null);
             }
 
             holder = new ViewHolder();
