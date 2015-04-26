@@ -150,44 +150,44 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         final ImageButton tabRecently = (ImageButton) view.findViewById(R.id.tabRecently);
         final ImageButton tabAroundYou = (ImageButton) view.findViewById(R.id.tabAroundYou);
         final ImageButton tabLowCost = (ImageButton) view.findViewById(R.id.tabLowCost);
-        tabPopular.setBackgroundResource(R.drawable.tab_2);
+        tabPopular.setBackgroundResource(R.drawable.tab_7);
         tabPopular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.tab_2);
-                tabRecently.setBackgroundResource(R.drawable.tab_1);
-                tabAroundYou.setBackgroundResource(R.drawable.tab_1);
-                tabLowCost.setBackgroundResource(R.drawable.tab_1);
+                v.setBackgroundResource(R.drawable.tab_7);
+                tabRecently.setBackgroundResource(R.drawable.tab_3);
+                tabAroundYou.setBackgroundResource(R.drawable.tab_3);
+                tabLowCost.setBackgroundResource(R.drawable.tab_3);
             }
         });
 
         tabRecently.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.tab_2);
-                tabPopular.setBackgroundResource(R.drawable.tab_1);
-                tabAroundYou.setBackgroundResource(R.drawable.tab_1);
-                tabLowCost.setBackgroundResource(R.drawable.tab_1);
+                v.setBackgroundResource(R.drawable.tab_7);
+                tabPopular.setBackgroundResource(R.drawable.tab_3);
+                tabAroundYou.setBackgroundResource(R.drawable.tab_3);
+                tabLowCost.setBackgroundResource(R.drawable.tab_3);
             }
         });
 
         tabAroundYou.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.tab_2);
-                tabPopular.setBackgroundResource(R.drawable.tab_1);
-                tabRecently.setBackgroundResource(R.drawable.tab_1);
-                tabLowCost.setBackgroundResource(R.drawable.tab_1);
+                v.setBackgroundResource(R.drawable.tab_7);
+                tabPopular.setBackgroundResource(R.drawable.tab_3);
+                tabRecently.setBackgroundResource(R.drawable.tab_3);
+                tabLowCost.setBackgroundResource(R.drawable.tab_3);
             }
         });
 
         tabLowCost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundResource(R.drawable.tab_2);
-                tabPopular.setBackgroundResource(R.drawable.tab_1);
-                tabRecently.setBackgroundResource(R.drawable.tab_1);
-                tabAroundYou.setBackgroundResource(R.drawable.tab_1);
+                v.setBackgroundResource(R.drawable.tab_7);
+                tabPopular.setBackgroundResource(R.drawable.tab_3);
+                tabRecently.setBackgroundResource(R.drawable.tab_3);
+                tabAroundYou.setBackgroundResource(R.drawable.tab_3);
             }
         });
         //###########################################################################################
