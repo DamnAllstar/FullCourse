@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="200dp">
         <ImageView
             android:id="@+id/tabPopular"
             android:layout_width="0dp"
@@ -16,7 +16,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_gravity="center_horizontal">
@@ -31,7 +31,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="150dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
@@ -39,32 +39,18 @@
             android:id="@+id/profileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pae A-Lony Boy"
+            android:text="Pae A-Lonely Boy"
             style="@style/editText2"/>
 
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="195dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/profileInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ENTANEER GEAR #43 Ching Mai ,Thailand"
-            style="@style/editText2"/>
-
-
-    </LinearLayout>
 
 
 
     <GridView android:id="@android:id/list" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="300dp"/>
+        android:layout_marginTop="200dp"/>
 
     <TextView android:id="@+id/add" android:layout_width="match_parent"
         android:layout_height="match_parent" android:gravity="center" />

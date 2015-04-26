@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "GOTHICI.TTF");
-        Typeface myTypeface2 = Typeface.createFromAsset(getAssets(), "GOTHIC.TTF");
+
 
         EditText myUsername = (EditText)findViewById(R.id.editText2);
         EditText myPassword = (EditText)findViewById(R.id.editText);
