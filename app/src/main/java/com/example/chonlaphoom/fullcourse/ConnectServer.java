@@ -57,6 +57,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
     //Function สำหรับเพิ่มตัวแปรในการส่งค่าแบบ Post
     public void addValue(String key, String value){
         nameValuePairs.add(new BasicNameValuePair(key, value));
+
     }
 
     //ก่อนที่จะทำ doInBackground จะทำงานที่ Function นี้ก่อน
@@ -66,6 +67,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
 
     //เริ่มทำงานแบบ Background
     protected String doInBackground(String... params) {
+
         InputStream is = null;
         String result = null;
 
@@ -107,7 +109,6 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
         ArrayList<String> email = new ArrayList<String>();
         ArrayList<String> name = new ArrayList<String>();
 
-
         //ถ้า result เป็น null คือ ไม่สามารถเชื่อมต่อกับ server ได้
         //ถ้าเชื่อมต่กับ server ได้ จะทำงานต่อไปนี้
         if(result != null){
@@ -130,11 +131,10 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
                     for(int i=0;i<size;i++){
 
                         String data1 = jResult.getJSONObject(i).getString("email");
-                        //String random  = jResult.getJSONObject(i).getString("F_id");
-                        String data2  = jResult.getJSONObject(i).getString("name");
+                    //    String data2  = jResult.getJSONObject(i).getString("name");
 
                         email.add(data1);
-                        name.add(data2);
+                     //   name.add(data2);
 
                     }
 
