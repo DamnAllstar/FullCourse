@@ -1,8 +1,8 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -255,6 +255,11 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         NFItemlist item = (NFItemlist) this.exampleListItemList.get(position);
         Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!"
                 , Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(NewsFeed.this.getActivity(), FCinfo.class);
+        int ID =88612; //Put ID in here!!
+        intent.putExtra("ID",ID);
+        startActivity(intent);
 
     }
 
