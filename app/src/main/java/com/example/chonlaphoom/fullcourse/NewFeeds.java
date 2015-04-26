@@ -1,27 +1,17 @@
 package com.example.chonlaphoom.fullcourse;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 
 public class NewFeeds extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener{
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener,FCFragment.OnFragmentInteractionListener{
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.

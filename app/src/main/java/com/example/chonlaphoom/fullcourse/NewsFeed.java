@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -47,6 +49,59 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
      */
     private ListAdapter mAdapter;
 
+    //############################TAN List Item###################################
+    private int[] flag = new int[]{
+            R.drawable.food_1,
+            R.drawable.food_2,
+            R.drawable.food_3,
+            R.drawable.food_4,
+            R.drawable.food_5,
+            R.drawable.food_6,
+            R.drawable.food_7,
+            R.drawable.food_8,
+            R.drawable.food_9,
+            R.drawable.food_10,
+            R.drawable.food_11,
+            R.drawable.food_12,
+            R.drawable.food_13,
+            R.drawable.food_14
+    };
+
+    private int[] shadow = new int[]{
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+            R.drawable.shadow,
+    };
+
+    private String[] detail = new String[]{
+            "Test1 jaa",
+            "Test2 jaa",
+            "Test3 jaa",
+            "Test4 jaa",
+            "Test5 jaa",
+            "Test6 jaa",
+            "Test7 jaa",
+            "Test8 jaa",
+            "Test9 jaa",
+            "Test10 jaa",
+            "Test11 jaa",
+            "Test12 jaa",
+            "Test13 jaa",
+            "Test14 jaa"
+    };
+    //##########################################################################
+
     // TODO: Rename and change types of parameters
     public static NewsFeed newInstance(String param1, String param2) {
         NewsFeed fragment = new NewsFeed();
@@ -69,14 +124,19 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         super.onCreate(savedInstanceState);
 
         exampleListItemList = new ArrayList();
-        exampleListItemList.add(new NFItemlist("Example 1"));
-        exampleListItemList.add(new NFItemlist("Example 2"));
-        exampleListItemList.add(new NFItemlist("Example 3"));
-        exampleListItemList.add(new NFItemlist("FuckSample"));
-        exampleListItemList.add(new NFItemlist("Example 4"));
-        exampleListItemList.add(new NFItemlist("Example 5"));
-        exampleListItemList.add(new NFItemlist("Example 6"));
-        exampleListItemList.add(new NFItemlist("FuckSample"));
+        for(int i=0;i!=detail.length;i++){
+            exampleListItemList.add(new NFItemlist(detail[i]));
+
+        }
+        /*
+        exampleListItemList.add(new NFItemlist("Example 1",R.drawable.icon_home));
+        exampleListItemList.add(new NFItemlist("Example 2",R.drawable.icon_fav));
+        exampleListItemList.add(new NFItemlist("Example 3",R.drawable.icon_fullcourse));
+        exampleListItemList.add(new NFItemlist("FuckSample",R.drawable.icon_logout));
+        exampleListItemList.add(new NFItemlist("Example 4",R.drawable.icon_sub));
+        exampleListItemList.add(new NFItemlist("Example 5",R.drawable.icon_home));
+        exampleListItemList.add(new NFItemlist("Example 6",R.drawable.icon_fav));
+        exampleListItemList.add(new NFItemlist("FuckSample",R.drawable.icon_logout));*/
         mAdapter = new NFAdapterlist(getActivity(), exampleListItemList);
     }
     @Override
@@ -84,9 +144,23 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newsfeed_grid, container, false);
 
-        // Set the adapter
+        //###################################TAN Adaptor##############################################
+        String[] from = {"flag2","shadow","text"};
+        int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+        for(int i=0;i<14;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("flag2", Integer.toString(flag[i]));
+            hm.put("shadow", Integer.toString(shadow[i]));
+            hm.put("text", detail[i]);
+            aList.add(hm);
+        }
+        SimpleAdapter TanAdapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
+        //###########################################################################################
+
+        // Set the adapter , ****Choose between TanAdapter/mAdapter*****
         mListView = (AbsListView) view.findViewById(android.R.id.list);
-        ((AdapterView) mListView).setAdapter(mAdapter);
+        ((AdapterView) mListView).setAdapter(TanAdapter);
 
         // Set OnItemClickListener so we can be notified on item clicks
         mListView.setOnItemClickListener(this);

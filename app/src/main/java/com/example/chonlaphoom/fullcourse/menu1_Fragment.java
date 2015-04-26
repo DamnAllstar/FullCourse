@@ -8,15 +8,32 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Thanaphon on 4/10/2015.
+ * This is MY FULLCOURSE page
  */
-public class menu1_Fragment extends Fragment {
+public class menu1_Fragment extends Fragment implements FCFragment.OnFragmentInteractionListener{
+
+    @Override
+    public void onFragmentInteraction(String id) {
+
+    }
+
+    //#####################################################################
+
+    //#################Tan's Fragment Edition#######################################
     View rootview;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         rootview = inflater.inflate(R.layout.activity_my_full_course,container,false);
+
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new FCFragment())
+                    .commit();
+        }
+
         return rootview;
     }
+    //#####################################################################
 
 }

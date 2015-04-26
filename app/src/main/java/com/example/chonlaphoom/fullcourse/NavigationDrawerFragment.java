@@ -69,7 +69,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private int[] flag = new int[]{
             R.drawable.icon_home,
-            R.drawable.icon_fullcourse,
+            R.drawable.icon_full,
             R.drawable.icon_fav,
             R.drawable.icon_sub,
             R.drawable.icon_logout

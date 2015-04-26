@@ -1,20 +1,17 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.view.View;
-
-
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,8 +20,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
-
-import org.json.JSONArray;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -82,6 +77,10 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(context,get, Toast.LENGTH_SHORT).show();
 
 
+                //#################for checking home page##################################
+                Intent intent = new Intent(MainActivity.this, NewFeeds.class);
+                startActivity(intent);
+                //########################################################################
          /*
                 if(setList(list)=="success"){
                     Toast.makeText(context, "Login success", Toast.LENGTH_LONG).show();
@@ -102,7 +101,9 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 //to mark a place get data in here 0 for lat 1 for lng
-        final double[][] LL = new double[3][2];
+        int d1 =3;
+        int d2 =2;
+        final double[][] LL = new double[d1][d2];
         LL[0][0] = 0.50;
         LL[0][1] = 0.50;
         LL[1][0] = 0.15;
