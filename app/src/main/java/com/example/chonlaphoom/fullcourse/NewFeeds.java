@@ -245,31 +245,31 @@ public class NewFeeds extends ActionBarActivity
         Context context = getApplicationContext();
         list = name;
         Bundle bundle = new Bundle();
-        bundle.putStringArrayList("popular",list);
+        bundle.putStringArrayList("popular", list);
 
         switch (switch_case) {
             case 0:
                 objFragment = new newfeeds_Fragment();
-                mTitle="Home";
+                mTitle = "Home";
 
                 break;
             case 1:
-                Log.d("test","case 1");
+                Log.d("test", "case 1");
                 objFragment = new menu1_Fragment();
-                mTitle="My FullCourses";
+                mTitle = "My FullCourses";
 
                 break;
             case 2:
                 objFragment = new menu2_Fragment();
-                mTitle="My Favorites";
+                mTitle = "My Favorites";
                 break;
             case 3:
                 objFragment = new menu3_Fragment();
-                mTitle="Subscribe";
+                mTitle = "Subscribe";
                 break;
             case 4:
                 objFragment = new menu4_Fragment();
-                mTitle="Logout";
+                mTitle = "Logout";
                 break;
         }
 
