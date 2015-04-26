@@ -143,7 +143,7 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         final ImageButton tabRecently = (ImageButton) view.findViewById(R.id.tabRecently);
         final ImageButton tabAroundYou = (ImageButton) view.findViewById(R.id.tabAroundYou);
         final ImageButton tabLowCost = (ImageButton) view.findViewById(R.id.tabLowCost);
-
+        tabPopular.setBackgroundResource(R.drawable.icon_home);
         tabPopular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
