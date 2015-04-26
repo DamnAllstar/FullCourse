@@ -119,12 +119,12 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        /*
         exampleListItemList = new ArrayList();
         for(int i=0;i!=detail.length;i++){
             exampleListItemList.add(new NFItemlist(detail[i]));
 
-        }
+        }*/
         /*
         exampleListItemList.add(new NFItemlist("Example 1",R.drawable.icon_home));
         exampleListItemList.add(new NFItemlist("Example 2",R.drawable.icon_fav));
@@ -134,7 +134,8 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         exampleListItemList.add(new NFItemlist("Example 5",R.drawable.icon_home));
         exampleListItemList.add(new NFItemlist("Example 6",R.drawable.icon_fav));
         exampleListItemList.add(new NFItemlist("FuckSample",R.drawable.icon_logout));*/
-        mAdapter = new NFAdapterlist(getActivity(), exampleListItemList);
+
+        //mAdapter = new NFAdapterlist(getActivity(), exampleListItemList);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -143,6 +144,15 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
 
         Bundle bundle = getArguments();
         ArrayList<String> rest_name = bundle.getStringArrayList("popular");
+        ArrayList<Integer> fullcourse_id = bundle.getIntegerArrayList("fullcourse_id");
+
+
+        exampleListItemList = new ArrayList();
+        for(int i=0;i!=fullcourse_id.size();i++){
+            exampleListItemList.add(new NFItemlist(Integer.toString(fullcourse_id.get(i))));
+
+        }
+        mAdapter = new NFAdapterlist(getActivity(), exampleListItemList);
         //Log.d("test",String.valueOf(rest_name.get(0)));
 
         //################################Tab Button Zone#############################################

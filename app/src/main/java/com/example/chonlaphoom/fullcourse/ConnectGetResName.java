@@ -108,7 +108,7 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
         //list ที่ใช้เก็บข้อมูล
         ArrayList<String> email = new ArrayList<String>();
         ArrayList<String> name = new ArrayList<String>();
-
+        ArrayList<Integer> fullcourse_id = new ArrayList<Integer>();
         //ถ้า result เป็น null คือ ไม่สามารถเชื่อมต่อกับ server ได้
         //ถ้าเชื่อมต่กับ server ได้ จะทำงานต่อไปนี้
         if(result != null){
@@ -131,9 +131,11 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
                     for(int i=0;i<size;i++){
 
                         String data1 = jResult.getJSONObject(i).getString("name");
+                        int data2 = jResult.getJSONObject(i).getInt("fullcourse_id");
                         //    String data2  = jResult.getJSONObject(i).getString("name");
 
                         name.add(data1);
+                        fullcourse_id.add(data2);
                         //   name.add(data2);
 
                     }
@@ -142,7 +144,7 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
                 }else{
                     ((NewFeeds)context).errorConnectToServer();
                 }
-                ((NewFeeds)context).getRes(name,switch_case);
+                ((NewFeeds)context).getRes(name,switch_case,fullcourse_id);
 
 
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้
