@@ -12,28 +12,28 @@
             android:layout_width="0dp"
             android:layout_weight="0.25"
             android:layout_height="match_parent"
-            android:background="@drawable/tab_1"/>
+            android:background="@drawable/tab_7"/>
         <ImageButton
             android:id="@+id/tabRecently"
             android:layout_width="0dp"
             android:layout_weight="0.25"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/tabPopular"
-            android:background="@drawable/tab_1"/>
+            android:background="@drawable/tab_3"/>
         <ImageButton
             android:id="@+id/tabAroundYou"
             android:layout_width="0dp"
             android:layout_weight="0.25"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/tabRecently"
-            android:background="@drawable/tab_1"/>
+            android:background="@drawable/tab_3"/>
         <ImageButton
             android:id="@+id/tabLowCost"
             android:layout_width="0dp"
             android:layout_weight="0.25"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/tabAroundYou"
-            android:background="@drawable/tab_1"/>
+            android:background="@drawable/tab_3"/>
     </LinearLayout>
 
     <GridView android:id="@android:id/list" android:layout_width="match_parent"
