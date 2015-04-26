@@ -19,7 +19,7 @@
             android:layout_height="43dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView4"
+            android:id="@+id/titleTextView"
             android:layout_gravity="right|top" />
 
         <TextView

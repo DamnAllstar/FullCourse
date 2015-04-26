@@ -1,6 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-
-import com.example.chonlaphoom.fullcourse.dummy.DummyContent;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,13 +112,17 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
     }
 
 
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (null != mListener) {
-            // Notify the active callbacks interface (the activity, if the
-            // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
-        }
+        FCItemList item = (FCItemList) this.exampleListItemList.get(position);
+        Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!"
+                , Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(FCFragment.this.getActivity(), FCinfo.class);
+        int ID =991092; //Put ID in here!!
+        intent.putExtra("ID",ID);
+        startActivity(intent);
     }
 
     /**

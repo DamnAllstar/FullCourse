@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="left|top"
+        android:id="@+id/All">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="by"
+                android:id="@+id/by"
+                android:layout_gravity="left|bottom" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:layout_gravity="right|bottom" />
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="50dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="FCName"
+                android:id="@+id/name"
+                android:layout_gravity="left|center_vertical" />
+
+        </FrameLayout>
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/Imap"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Appetizers"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/appetizer"
+        android:layout_gravity="right|center_vertical" />
+</FrameLayout>
+
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/imsoup"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Soup"
+        android:id="@+id/soup"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/soup"
+        android:layout_gravity="right|center_vertical" /></FrameLayout>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/imfish"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Fish Dish"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/fish"
+        android:layout_gravity="right|center_vertical" /></FrameLayout>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/immeat"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Meat Dish"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/meat"
+        android:layout_gravity="right|center_vertical" />v</FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/immain"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Main course"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/main"
+        android:layout_gravity="right|center_vertical" /></FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/imsalad"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Salad"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/salad"
+        android:layout_gravity="right|center_vertical" /></FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/imdessert"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dessert"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/dessert"
+        android:layout_gravity="right|center_vertical" /></FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/imdrink"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="233dp"
+        android:layout_height="56dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Drink"
+        android:id="@+id/textView9"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food name"
+        android:id="@+id/drink"
+        android:layout_gravity="right|center_vertical" /></FrameLayout>
+
+    </LinearLayout>
+</ScrollView>

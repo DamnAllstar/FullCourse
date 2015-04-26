@@ -1,9 +1,6 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.location.GpsStatus;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -251,6 +248,7 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         NFItemlist item = (NFItemlist) this.exampleListItemList.get(position);
         Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!"
                 , Toast.LENGTH_SHORT).show();
+
     }
 
     /**
