@@ -40,6 +40,7 @@ public class NewFeeds extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_feeds);
 
+
         //connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
         //connectServer.execute();
 
@@ -61,6 +62,8 @@ public class NewFeeds extends ActionBarActivity
             case 0:
                 objFragment = new newfeeds_Fragment();
                 mTitle="Home";
+                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+                connectServer.execute();
                 break;
             case 1:
                 objFragment = new menu1_Fragment();
@@ -79,8 +82,6 @@ public class NewFeeds extends ActionBarActivity
                 mTitle="Logout";
                 break;
         }
-        connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
-        connectServer.execute();
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
 
