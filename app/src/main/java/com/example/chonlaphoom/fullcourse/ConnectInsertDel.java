@@ -34,7 +34,7 @@ public class ConnectInsertDel extends AsyncTask<String, Integer, String> {
     private List<NameValuePair> nameValuePairs;
     private DialogConnect dialogConnect;
     private Context context;
-    int nRandom;
+
     ConnectInsertDel(Context context,String URL){
         this.context = context;
 

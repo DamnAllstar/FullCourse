@@ -26,6 +26,7 @@ public class register extends ActionBarActivity {
     String part1;
     String part2;
     ConnectInsertDel connectServer;
+    String get;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class register extends ActionBarActivity {
                         connectServer.addValue("regissirname", sirname.getText().toString());
                         connectServer.addValue("regispassword", password.getText().toString());
                         connectServer.addValue("reregispassword", repassword.getText().toString());
+
                         Toast.makeText(context,"Register successed",Toast.LENGTH_SHORT).show();
                         connectServer.execute();
                         Intent intent = new Intent(register.this, MainActivity.class);

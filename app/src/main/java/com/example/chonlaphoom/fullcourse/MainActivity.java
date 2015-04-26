@@ -36,10 +36,14 @@ public class MainActivity extends ActionBarActivity {
 
     EditText email;
     EditText password;
-    ArrayList<String> list;
+ // public   ArrayList<String> list;
+ public   String list;
+  public   String get;
     ArrayAdapter<String> arrayAdapter;
   //  ConnectServer connectServer;
     ListView listView;
+    String test = "OK";
+    ConnectServer connectServer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +71,16 @@ public class MainActivity extends ActionBarActivity {
                 Context context = getApplicationContext();
 
             //    Toast.makeText(context, email.getText().toString()+" "+password.getText().toString(), Toast.LENGTH_SHORT).show();
-         //       Toast.makeText(context,list.get(0), Toast.LENGTH_LONG).show();
-                ConnectLogin connectServer = new ConnectLogin(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");
-                connectServer.addValue("editeText2",email.getText().toString());
-                connectServer.addValue("editeText",password.getText().toString());
+
+                connectServer = new ConnectServer(MainActivity.this, "http://naneport.arg.in.th/eatwell/full/login.php");
+
+
+                connectServer.addValue("loginemail",email.getText().toString());
+                connectServer.addValue("loginpassword",password.getText().toString());
                 connectServer.execute();
+                get = connectServer.returnValue();
+                Toast.makeText(context,get, Toast.LENGTH_SHORT).show();
+
 
          /*
                 if(setList(list)=="success"){
@@ -175,11 +184,12 @@ public class MainActivity extends ActionBarActivity {
         Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
     }
 
-    public void setList(ArrayList<String> list){
-        String test = "OK";
-        this.list = list;
+    public void setList(ArrayList<String> List){
 
-        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, this.list);
+
+        list = List.get(0);
+
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, List);
         listView.setAdapter(arrayAdapter);
         Context context = getApplicationContext();
     //    if(list.get(0).equals(test)) {
@@ -190,4 +200,6 @@ public class MainActivity extends ActionBarActivity {
 
 
     }
+
+
 }

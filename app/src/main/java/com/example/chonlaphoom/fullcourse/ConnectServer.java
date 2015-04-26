@@ -37,6 +37,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
     private List<NameValuePair> nameValuePairs;
     private DialogConnect dialogConnect;
     private Context context;
+    public String get;
 
     ConnectServer(Context context,String URL){
         this.context = context;
@@ -120,7 +121,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
                 if(jObject.getString("status").equals("OK")){
                     //แปลงผลลัพธ์ที่ได้มาเป็น JSON Array
                     JSONArray jResult = jObject.getJSONArray("result");
-
+                    get="Do";
 
                     //ดึงขนาดของข้อมูลใน jResult
                     int size = jResult.length();
@@ -156,5 +157,10 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
         }
 
         dialogConnect.dismiss();
+    }
+
+    public String returnValue()
+    {
+        return get;
     }
 }
