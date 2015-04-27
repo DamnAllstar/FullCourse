@@ -21,10 +21,13 @@ public class NewFeeds extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener,FCFragment.OnFragmentInteractionListener{
     ArrayList<String> list;
     String get;
+    String getUser;
     ArrayAdapter arrayAdapter;
     ListView listView;
 
     ConnectGetResName connectServer;
+
+    MainActivity mainActivity = new MainActivity();
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -40,6 +43,11 @@ public class NewFeeds extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_feeds);
 
+
+        Intent intent = new Intent();
+        intent = getIntent();
+        getUser =  intent.getStringExtra("user");
+        Toast.makeText(this,"This is "+getUser, Toast.LENGTH_LONG).show();
 
         //connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
         //connectServer.execute();
@@ -214,6 +222,8 @@ public class NewFeeds extends ActionBarActivity
         list = name;
         get = String.valueOf(list.get(0));
         Toast.makeText(this, get, Toast.LENGTH_LONG).show();
+        //test
+
 
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
 

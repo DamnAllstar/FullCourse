@@ -49,7 +49,6 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
         dialogConnect = new DialogConnect(this.context, this);
         dialogConnect.setTitle(this.context.getString(R.string.app_name));
         dialogConnect.setMessage("กรุณารอสักครู่");
-        //Log.d("test","behind waiting");
     }
 
     //Function สำหรับเพิ่มตัวแปรในการส่งค่าแบบ Post
@@ -65,7 +64,7 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
 
     //เริ่มทำงานแบบ Background
     protected String doInBackground(String... params) {
-        //Log.d("test","do in background");
+
         InputStream is = null;
         String result = null;
 
@@ -104,7 +103,6 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
     //ถ้าทำงานที่ doInBackground เสร็จแล้ว จะมาทำงานที่ Function นี้
     protected void onPostExecute(String result) {
         //list ที่ใช้เก็บข้อมูล
-        Log.d("test","get result");
         ArrayList<String> email = new ArrayList<String>();
         ArrayList<String> name = new ArrayList<String>();
 
