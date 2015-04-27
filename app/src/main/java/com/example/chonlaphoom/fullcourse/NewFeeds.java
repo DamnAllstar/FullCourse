@@ -22,12 +22,16 @@ public class NewFeeds extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener,FCFragment.OnFragmentInteractionListener{
     ArrayList<String> list;
     ArrayList<Integer> fullcourse_id;
+
+
     String get;
     String getUser;
     ArrayAdapter arrayAdapter;
     ListView listView;
 
     ConnectGetResName connectServer;
+    ConnectGetMyFav connectGetMyFav;
+    ConnectGetMyFull connectGetMyFull;
 
     MainActivity mainActivity = new MainActivity();
     /**
@@ -83,17 +87,19 @@ public class NewFeeds extends ActionBarActivity
                 objFragment = new menu1_Fragment();
                 mTitle="My FullCourses";
                 */
-                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
-                connectServer.setCase(position);
-                connectServer.execute();
+                connectGetMyFull = new ConnectGetMyFull(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/myFullCourse.php");
+                connectGetMyFull.setCase(position);
+                connectGetMyFull.addValue("loginemail",getUser);
+                connectGetMyFull.execute();
                 break;
             case 2:
                 /*
                 objFragment = new menu2_Fragment();
                 mTitle="My Favorites";*/
-                connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
-                connectServer.setCase(position);
-                connectServer.execute();
+                connectGetMyFav = new ConnectGetMyFav(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/myFavorite.php");
+                connectGetMyFav.setCase(position);
+                connectGetMyFav.addValue("loginmaail",getUser);
+                connectGetMyFav.execute();
                 break;
             case 3:
                 /*
@@ -288,5 +294,106 @@ public class NewFeeds extends ActionBarActivity
 
         //arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
     }
+
+    public void getMyFull(ArrayList<String> name , int switch_case , ArrayList<Integer> fullcourse_id){
+
+        Fragment objFragment = null;
+        Context context = getApplicationContext();
+        list = name;
+        this.fullcourse_id = fullcourse_id;
+
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("myFull", list);
+        bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
+
+        switch (switch_case) {
+            case 0:
+                objFragment = new newfeeds_Fragment();
+                mTitle = "Home";
+
+                break;
+            case 1:
+                Log.d("test", "case 1");
+                objFragment = new menu1_Fragment();
+                mTitle = "My FullCourses";
+
+                break;
+            case 2:
+                objFragment = new menu2_Fragment();
+                mTitle = "My Favorites";
+                break;
+            case 3:
+                objFragment = new menu3_Fragment();
+                mTitle = "Subscribe";
+                break;
+            case 4:
+                objFragment = new menu4_Fragment();
+                mTitle = "Logout";
+                break;
+        }
+
+        objFragment.setArguments(bundle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, objFragment)
+                .commit();
+        //get = String.valueOf(list.get(0));
+        //Toast.makeText(this, get, Toast.LENGTH_LONG).show();
+
+        //arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
+    }
+
+
+    public void getMyFav(ArrayList<String> name , int switch_case , ArrayList<Integer> fullcourse_id){
+
+        Fragment objFragment = null;
+        Context context = getApplicationContext();
+        list = name;
+        this.fullcourse_id = fullcourse_id;
+
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("myFav", list);
+        bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
+
+        switch (switch_case) {
+            case 0:
+                objFragment = new newfeeds_Fragment();
+                mTitle = "Home";
+
+                break;
+            case 1:
+                Log.d("test", "case 1");
+                objFragment = new menu1_Fragment();
+                mTitle = "My FullCourses";
+
+                break;
+            case 2:
+                objFragment = new menu2_Fragment();
+                mTitle = "My Favorites";
+                break;
+            case 3:
+                objFragment = new menu3_Fragment();
+                mTitle = "Subscribe";
+                break;
+            case 4:
+                objFragment = new menu4_Fragment();
+                mTitle = "Logout";
+                break;
+        }
+
+        objFragment.setArguments(bundle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, objFragment)
+                .commit();
+        //get = String.valueOf(list.get(0));
+        //Toast.makeText(this, get, Toast.LENGTH_LONG).show();
+
+        //arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
+    }
+
+
 
 }
