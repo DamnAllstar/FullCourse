@@ -332,6 +332,7 @@ public class NewFeeds extends ActionBarActivity
         bundle.putStringArrayList("myFull", list);
         bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
         bundle.putString("profilename",this.getUserName);
+        bundle.putString("email",this.getUser);
         Log.d("test",this.getUserName);
 
         switch (switch_case) {

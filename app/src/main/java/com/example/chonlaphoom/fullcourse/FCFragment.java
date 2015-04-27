@@ -149,6 +149,8 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         final ArrayList<String> full_name = bundle.getStringArrayList("myFull");
         final ArrayList<Integer> full_id = bundle.getIntegerArrayList("fullcourse_id");
         final String profile = bundle.getString("profilename");
+        final String email = bundle.getString("email");
+
         Log.d("test",profile);
         TextView profile_name = (TextView) view.findViewById(R.id.profileName);
         profile_name.setText(profile);
