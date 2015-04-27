@@ -30,6 +30,7 @@ import java.util.List;
  */
 public class FCFragment extends android.support.v4.app.Fragment implements AbsListView.OnItemClickListener {
     private List exampleListItemList; // at the top of your fragment list
+    private List exampleListItemList1;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -45,7 +46,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
      * The fragment's ListView/GridView.
      */
     private AbsListView mListView;
-
+    public String profile;
     /**
      * The Adapter which will be used to populate the ListView/GridView with
      * Views.
@@ -126,7 +127,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         exampleListItemList = new ArrayList();
-
+        exampleListItemList1 = new ArrayList();
 
 
         /*
@@ -148,10 +149,10 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         Bundle bundle = getArguments();
         final ArrayList<String> full_name = bundle.getStringArrayList("myFull");
         final ArrayList<Integer> full_id = bundle.getIntegerArrayList("fullcourse_id");
-        final String profile = bundle.getString("profilename");
+        profile = bundle.getString("profilename");
         final String email = bundle.getString("email");
 
-        Log.d("test",profile);
+        //Log.d("test",String.valueOf(full_name.get(0)));
         TextView profile_name = (TextView) view.findViewById(R.id.profileName);
         profile_name.setText(profile);
 
@@ -159,6 +160,11 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
 
         for(int i=0;i!=full_id.size();i++){
             exampleListItemList.add(new FCItemList(Integer.toString(full_id.get(i))));
+
+        }
+
+        for(int i=0;i!=full_name.size();i++){
+            exampleListItemList1.add(new FCItemList(String.valueOf(full_name.get(i))));
 
         }
         //###################################TAN Adaptor##############################################
@@ -218,12 +224,15 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         FCItemList item = (FCItemList) this.exampleListItemList.get(position);
-        Toast.makeText(getActivity(), item.getItemTitle() + " Clicked!"
+        FCItemList itemname = (FCItemList) this.exampleListItemList1.get(position);
+        Toast.makeText(getActivity(), itemname.getItemTitle() + " Clicked!"
                 , Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(FCFragment.this.getActivity(), FCinfo.class);
         int ID =Integer.parseInt(item.getItemTitle()); //Put ID in here!!
-        intent.putExtra("ID",ID);
+        intent.putExtra("fcname",String.valueOf(itemname.getItemTitle()));
+        intent.putExtra("fcid",ID);
+        intent.putExtra("username",this.profile);
         startActivity(intent);
     }
 
