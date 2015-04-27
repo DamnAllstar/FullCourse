@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Created by Chonlaphoom on 4/27/2015.
  */
-public class ConnectGetFoodByType extends AsyncTask<String, Integer, String> {
+public class ConnectGetFoodBySalad extends AsyncTask<String, Integer, String> {
     private HttpPost httppost;
     private HttpClient httpclient;
     private List<NameValuePair> nameValuePairs;
@@ -36,7 +36,7 @@ public class ConnectGetFoodByType extends AsyncTask<String, Integer, String> {
     private Context context;
     public String get;
     public int switch_case;
-    ConnectGetFoodByType(Context context, String URL){
+    ConnectGetFoodBySalad(Context context, String URL){
         this.context = context;
 
         //สร้างส่วนประกอบที่จำเป็นในการเชื่อมกับ Server
@@ -130,7 +130,7 @@ public class ConnectGetFoodByType extends AsyncTask<String, Integer, String> {
                     //วน Loop เอาค่าใส่ใน List
                     for(int i=0;i<size;i++){
 
-                        String data1 = jResult.getJSONObject(i).getString("user");
+                        String data1 = jResult.getJSONObject(i).getString("name");
                      //   int data2 = jResult.getJSONObject(i).getInt("fullcourse_id");
                         //    String data2  = jResult.getJSONObject(i).getString("name");
 
@@ -144,7 +144,7 @@ public class ConnectGetFoodByType extends AsyncTask<String, Integer, String> {
                 }else{
                     ((FCRegister)context).errorConnectToServer();
                 }
-                ((FCRegister)context).getName(name);
+                ((FCRegister)context).getSalad(name);
 
 
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้

@@ -53,6 +53,8 @@ public class NewFeeds extends ActionBarActivity
         setContentView(R.layout.activity_new_feeds);
 
 
+
+
         Intent intent = new Intent();
         intent = getIntent();
         getUser =  intent.getStringExtra("user");
@@ -253,6 +255,7 @@ public class NewFeeds extends ActionBarActivity
 
     //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
     public void errorConnectToServer() {
+
             Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
        // Toast.makeText(this, "login fail", Toast.LENGTH_LONG).show();
 
