@@ -2,6 +2,7 @@ package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,7 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 
 public class register extends ActionBarActivity {
@@ -32,6 +36,21 @@ public class register extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "GOTHIC.TTF");
+
+
+        EditText myDisplayName= (EditText)findViewById(R.id.editText3);
+        EditText mySirname = (EditText)findViewById(R.id.editText4);
+        EditText myEmail = (EditText)findViewById(R.id.editText5);
+        EditText myCPassword = (EditText)findViewById(R.id.editText6);
+        EditText myCRepass = (EditText)findViewById(R.id.editText7);
+        TextView myRegist = (TextView)findViewById(R.id.textRegist);
+        myDisplayName.setTypeface(myTypeface);
+        mySirname.setTypeface(myTypeface);
+        myEmail.setTypeface(myTypeface);
+        myCPassword.setTypeface(myTypeface);
+        myCRepass.setTypeface(myTypeface);
+        myRegist.setTypeface(myTypeface);
 
         ImageButton regist = (ImageButton)findViewById(R.id.imageButton);
         name = (EditText)findViewById(R.id.editText3);
