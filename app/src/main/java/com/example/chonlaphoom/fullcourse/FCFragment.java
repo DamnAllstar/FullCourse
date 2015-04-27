@@ -3,6 +3,7 @@ package com.example.chonlaphoom.fullcourse;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -143,9 +144,16 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fc, container, false);
+
         Bundle bundle = getArguments();
         final ArrayList<String> full_name = bundle.getStringArrayList("myFull");
         final ArrayList<Integer> full_id = bundle.getIntegerArrayList("fullcourse_id");
+        final String profile = bundle.getString("profilename");
+        Log.d("test",profile);
+        TextView profile_name = (TextView) view.findViewById(R.id.profileName);
+        profile_name.setText(profile);
+
+        //#############################Generate FC List#####################################################
 
         for(int i=0;i!=full_id.size();i++){
             exampleListItemList.add(new FCItemList(Integer.toString(full_id.get(i))));

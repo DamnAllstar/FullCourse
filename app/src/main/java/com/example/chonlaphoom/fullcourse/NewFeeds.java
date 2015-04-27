@@ -83,6 +83,8 @@ public class NewFeeds extends ActionBarActivity
                 connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
                 connectServer.setCase(position);
                 connectServer.execute();
+
+
                 break;
             case 1:
                 /*
@@ -310,6 +312,8 @@ public class NewFeeds extends ActionBarActivity
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("myFull", list);
         bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
+        bundle.putString("profilename",this.getUserName);
+        Log.d("test",this.getUserName);
 
         switch (switch_case) {
             case 0:
