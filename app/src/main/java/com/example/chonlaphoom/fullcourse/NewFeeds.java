@@ -249,6 +249,7 @@ public class NewFeeds extends ActionBarActivity
 
     //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
     public void errorConnectToServer() {
+
             Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
        // Toast.makeText(this, "login fail", Toast.LENGTH_LONG).show();
 

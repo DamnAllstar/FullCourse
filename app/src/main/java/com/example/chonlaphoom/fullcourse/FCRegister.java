@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -30,13 +31,18 @@ public class FCRegister extends ActionBarActivity {
     public  ArrayList<String> listSalad;
     public  ArrayList<String> listMeat;
 
+    String getUserName;
 
+    EditText change;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fc_register);
 
+        change = (EditText)findViewById(R.id.editText2);
+
+        ConnectServer connectServer = new ConnectServer(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/addFull.php");
 
         ConnectGetFoodByApp  connectGetFoodByApp = new ConnectGetFoodByApp(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/getFoodByAppe.php");
         connectGetFoodByApp.execute();
@@ -50,6 +56,8 @@ public class FCRegister extends ActionBarActivity {
         connectGetFoodBySalad.execute();
         ConnectGetFoodByDessert  connectGetFoodByDessert = new ConnectGetFoodByDessert(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/getFoodByDessert.php");
         connectGetFoodByDessert.execute();
+
+
 
      //   addItemsOnSpinner2();
         addListenerOnButton();
@@ -172,6 +180,17 @@ public class FCRegister extends ActionBarActivity {
                                 "\nSalad : " + String.valueOf(salad.getSelectedItem())+
                                 "\nDessert : " + String.valueOf(dessert.getSelectedItem())        ,
                         Toast.LENGTH_SHORT).show();
+
+         //       connectServer.addValue("fullName",change.getText().toString());
+         //       connectServer.addValue("User",getUserName);
+         //       connectServer.addValue("Main",String.valueOf(main.getSelectedItem()));
+         //       connectServer.addValue("Dessert",String.valueOf(dessert.getSelectedItem()));
+        //        connectServer.addValue("Fish",String.valueOf(fish.getSelectedItem()));
+         //       connectServer.addValue("Salad",String.valueOf(salad.getSelectedItem()));
+         //       connectServer.addValue("Meat",String.valueOf(meat.getSelectedItem()));
+        //       connectServer.addValue("Appetize",String.valueOf(appe.getSelectedItem()));
+
+
             }
 
         });
