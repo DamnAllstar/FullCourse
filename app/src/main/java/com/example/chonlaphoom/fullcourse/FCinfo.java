@@ -13,6 +13,14 @@ import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+
+
 
 /**
  * Created by amin on 4/26/2015.
@@ -105,6 +113,7 @@ public class FCinfo extends ActionBarActivity {
 
     }
 
+
     ///ถ้าไม่สามารถเชื่อมต่อกับ Server ได้จะมาทำงานที่ Function นี้
     public void cannotConnectToServer() {
         Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับ Server", Toast.LENGTH_LONG).show();
@@ -156,5 +165,8 @@ public class FCinfo extends ActionBarActivity {
         text = (TextView) findViewById(R.id.dessert);
         text.setText(String.valueOf(this.food_name.get(1)));
     }
+
+
+
 
 }

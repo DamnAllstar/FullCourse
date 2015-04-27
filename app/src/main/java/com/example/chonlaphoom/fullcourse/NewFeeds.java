@@ -51,6 +51,8 @@ public class NewFeeds extends ActionBarActivity
         setContentView(R.layout.activity_new_feeds);
 
 
+
+
         Intent intent = new Intent();
         intent = getIntent();
         getUser =  intent.getStringExtra("user");
