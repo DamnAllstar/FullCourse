@@ -1,12 +1,11 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,7 +18,9 @@ import java.util.List;
 public class FCRegister extends ActionBarActivity {
 
     private Spinner appe, soup , fish,meat,main,salad,dessert,drink;
-    private Button submit;
+    private ImageButton submit;
+
+    
     ArrayList<String> listName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class FCRegister extends ActionBarActivity {
     // add array แบบ dynamic
     public void addItemsOnSpinner2() {
 
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        soup = (Spinner) findViewById(R.id.Rsoup);
         List<String> list = new ArrayList<String>();
         list.add("Ice Cream");
         list.add("Honey Toast");
@@ -43,37 +44,46 @@ public class FCRegister extends ActionBarActivity {
         list.add("Tokyo Banana");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(dataAdapter);
+        soup.setAdapter(dataAdapter);
     }
     //
 
     //รั บ Listener ของอั นที่  ไม่ ใช่ dynamic
     public void addListenerOnSpinnerItemSelection() {
-        appe = (Spinner) findViewById(R.id.spinner1);
+        appe = (Spinner) findViewById(R.id.Rappe);
         appe.setOnItemSelectedListener(new DropDownList());
 
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
-        spinner3.setOnItemSelectedListener(new DropDownList());
+        fish = (Spinner) findViewById(R.id.Rfish);
+        fish.setOnItemSelectedListener(new DropDownList());
 
-        spinner4 = (Spinner) findViewById(R.id.spinner4);
-        spinner4.setOnItemSelectedListener(new DropDownList());
+        meat    = (Spinner) findViewById(R.id.Rmeat);
+        meat.setOnItemSelectedListener(new DropDownList());
 
-        spinner5 = (Spinner) findViewById(R.id.spinner5);
-        spinner5.setOnItemSelectedListener(new DropDownList());
+        salad = (Spinner) findViewById(R.id.Rsalad);
+        salad.setOnItemSelectedListener(new DropDownList());
 
-        spinner6 = (Spinner) findViewById(R.id.spinner6);
-        spinner6.setOnItemSelectedListener(new DropDownList());
+        main = (Spinner) findViewById(R.id.Rmain);
+        main.setOnItemSelectedListener(new DropDownList());
+
+        dessert = (Spinner) findViewById(R.id.Rdessert);
+        dessert.setOnItemSelectedListener(new DropDownList());
+
+        drink = (Spinner) findViewById(R.id.Rdrink);
+        drink.setOnItemSelectedListener(new DropDownList());
+
     }
 
     public void addListenerOnButton() {
 
-        appe = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
-        spinner4 = (Spinner) findViewById(R.id.spinner4);
-        spinner5 = (Spinner) findViewById(R.id.spinner5);
-        spinner6 = (Spinner) findViewById(R.id.spinner6);
-        submit = (Button) findViewById(R.id.button);
+        appe = (Spinner) findViewById(R.id.Rappe);
+        soup = (Spinner) findViewById(R.id.Rsoup);
+        fish = (Spinner) findViewById(R.id.Rfish);
+        meat = (Spinner) findViewById(R.id.Rmeat);
+        main = (Spinner) findViewById(R.id.Rmain);
+        dessert = (Spinner) findViewById(R.id.Rdessert);
+        salad = (Spinner) findViewById(R.id.Rsalad);
+        drink = (Spinner) findViewById(R.id.Rdrink);
+        submit = (ImageButton) findViewById(R.id.Submit);
 
         submit.setOnClickListener(new View.OnClickListener() {
 
@@ -82,12 +92,14 @@ public class FCRegister extends ActionBarActivity {
 
                 Toast.makeText(FCRegister.this,
                         "Result : " +
-                                "\nAppetizer : " + String.valueOf(spinner1.getSelectedItem()) +
-                                "\nSpinner 2 : " + String.valueOf(spinner2.getSelectedItem()) +
-                                "\nSpinner 3 : " + String.valueOf(spinner3.getSelectedItem()) +
-                                "\nSpinner 4 : " + String.valueOf(spinner4.getSelectedItem()) +
-                                "\nSpinner 5 : " + String.valueOf(spinner5.getSelectedItem()) +
-                                "\nSpinner 6 : " + String.valueOf(spinner6.getSelectedItem()),
+                                "\nAppetizer : " + String.valueOf(appe.getSelectedItem()) +
+                                "\nSoup : " + String.valueOf(soup.getSelectedItem()) +
+                                "\nFish Dish : " + String.valueOf(fish.getSelectedItem()) +
+                                "\nMeat Dish : " + String.valueOf(meat.getSelectedItem()) +
+                                "\nMain Dish : " + String.valueOf(main.getSelectedItem()) +
+                                "\nSalad : " + String.valueOf(salad.getSelectedItem())+
+                                "\nDessert : " + String.valueOf(dessert.getSelectedItem())+
+                                "\nDrink : " + String.valueOf(drink.getSelectedItem()),
                         Toast.LENGTH_SHORT).show();
             }
 
