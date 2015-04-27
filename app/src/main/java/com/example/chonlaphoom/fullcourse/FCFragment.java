@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -160,6 +161,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         //###########################################################################################
 
 
+
         // Set the adapter , ****Choose between TanAdapter/mAdapter*****
         mListView = (AbsListView) view.findViewById(android.R.id.list);
         //((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
@@ -168,6 +170,14 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         // Set OnItemClickListener so we can be notified on item clicks
         mListView.setOnItemClickListener(this);
 
+        final ImageButton button = (ImageButton)view.findViewById(R.id.addFullcource);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FCFragment.this.getActivity(), FCRegister.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
