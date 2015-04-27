@@ -1,5 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,11 +10,21 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class NewFeeds extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks ,NewsFeed.OnFragmentInteractionListener,FCFragment.OnFragmentInteractionListener{
+    ArrayList<String> list;
+    String get;
+    ArrayAdapter arrayAdapter;
+    ListView listView;
 
+    ConnectGetResName connectServer;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -27,6 +39,9 @@ public class NewFeeds extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_feeds);
+
+        //connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+        //connectServer.execute();
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         //mTitle = getTitle();
@@ -64,8 +79,11 @@ public class NewFeeds extends ActionBarActivity
                 mTitle="Logout";
                 break;
         }
+        connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
+        connectServer.execute();
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+
         fragmentManager.beginTransaction()
                 .replace(R.id.container, objFragment)
                 .commit();
@@ -175,4 +193,32 @@ public class NewFeeds extends ActionBarActivity
         }
     }
     */
+
+    ///ถ้าไม่สามารถเชื่อมต่อกับ Server ได้จะมาทำงานที่ Function นี้
+    public void cannotConnectToServer() {
+        Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับ Server", Toast.LENGTH_LONG).show();
+    }
+
+    //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
+    public void errorConnectToServer() {
+            Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
+       // Toast.makeText(this, "login fail", Toast.LENGTH_LONG).show();
+
+    }
+
+
+    public void getRes(ArrayList<String> name){
+
+        Context context = getApplicationContext();
+        list = name;
+        get = String.valueOf(list.get(0));
+        Toast.makeText(this, get, Toast.LENGTH_LONG).show();
+
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
+
+
+
+    }
+
+
 }

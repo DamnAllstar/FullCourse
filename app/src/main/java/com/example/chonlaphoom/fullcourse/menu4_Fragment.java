@@ -1,6 +1,8 @@
 package com.example.chonlaphoom.fullcourse;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,10 +15,14 @@ import android.view.ViewGroup;
  */
 public class menu4_Fragment extends Fragment {
     View rootview;
+    Context context;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         rootview = inflater.inflate(R.layout.activity_setting,container,false);
+        context=container.getContext();
         return rootview;
     }
+
+
 }
