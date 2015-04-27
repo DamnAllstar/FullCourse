@@ -39,7 +39,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    public String getEmail;
     private OnFragmentInteractionListener mListener;
 
     /**
@@ -130,6 +130,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         exampleListItemList1 = new ArrayList();
 
 
+
         /*
         exampleListItemList.add(new FCItemList("FCEX 1"));
         exampleListItemList.add(new FCItemList("FCEX 2"));
@@ -153,6 +154,8 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         final String email = bundle.getString("email");
 
         //Log.d("test",String.valueOf(full_name.get(0)));
+       getEmail =  email;
+               Log.d("test",profile);
         TextView profile_name = (TextView) view.findViewById(R.id.profileName);
         profile_name.setText(profile);
 
@@ -196,6 +199,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FCFragment.this.getActivity(), FCRegister.class);
+                intent.putExtra("email",getEmail);
                 startActivity(intent);
             }
         });

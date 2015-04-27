@@ -1,6 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -31,8 +32,7 @@ public class FCRegister extends ActionBarActivity {
     public  ArrayList<String> listSalad;
     public  ArrayList<String> listMeat;
 
-    String getUser ="123@123";
-
+    String getUser;
     EditText change;
 
     @Override
@@ -41,6 +41,12 @@ public class FCRegister extends ActionBarActivity {
         setContentView(R.layout.activity_fc_register);
 
         change = (EditText)findViewById(R.id.nameFc);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            //Log.d("test","start extras");
+            getUser = extras.getString("email");
+        }
 
 
 
@@ -169,7 +175,7 @@ public class FCRegister extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                ConnectServer connectServer = new ConnectServer(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/addFull.php");
+                ConnectInsertDel connectServer = new ConnectInsertDel(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/addFull.php");
                 connectServer.addValue("fullName",change.getText().toString());
                 connectServer.addValue("User",getUser);
                 connectServer.addValue("Main",String.valueOf(main.getSelectedItem()));
@@ -178,6 +184,7 @@ public class FCRegister extends ActionBarActivity {
                 connectServer.addValue("Salad",String.valueOf(salad.getSelectedItem()));
                 connectServer.addValue("Meat",String.valueOf(meat.getSelectedItem()));
                 connectServer.addValue("Appetize",String.valueOf(appe.getSelectedItem()));
+                connectServer.execute();
 
                 Toast.makeText(FCRegister.this,
                         "Result :\nfullname : " + change.getText().toString()+ "\nBy User : "+getUser+
@@ -189,7 +196,8 @@ public class FCRegister extends ActionBarActivity {
                                 "\nDessert : " + String.valueOf(dessert.getSelectedItem())        ,
                 Toast.LENGTH_SHORT).show();
 
-
+                Intent intent = new Intent(FCRegister.this, NewFeeds.class);
+                startActivity(intent);
 
 
             }
