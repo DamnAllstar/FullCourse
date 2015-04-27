@@ -91,7 +91,7 @@ android:background="#b5151617"
                 android:layout_gravity="left|bottom" />
 
         </FrameLayout>
-
+<!--
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,6 +123,38 @@ android:background="#b5151617"
                 style="@style/editText2"
                 android:layout_gravity="left|bottom" />
 
+        </FrameLayout>
+-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/fsalad">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imsalad"
+                android:layout_gravity="left|top"
+                android:background="@drawable/food_8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Salad"
+                android:id="@+id/textView12"
+                style="@style/editText3"
+                android:layout_gravity="left|top" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Food name"
+                android:id="@+id/salad"
+                style="@style/editText2"
+                android:layout_gravity="left|bottom" />
         </FrameLayout>
 
         <FrameLayout
@@ -185,7 +217,9 @@ android:background="#b5151617"
         android:text="Food name"
         style="@style/editText2"
         android:id="@+id/meat"
-        android:layout_gravity="left|bottom" />v</FrameLayout>
+        android:layout_gravity="left|bottom" />
+</FrameLayout>
+
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -203,7 +237,7 @@ android:background="#b5151617"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Main course"
+        android:text="Main Dish"
         android:id="@+id/textView11"
         style="@style/editText3"
         android:layout_gravity="left|top" />
@@ -217,37 +251,7 @@ android:background="#b5151617"
         android:id="@+id/main"
         android:layout_gravity="left|bottom" />
 </FrameLayout>
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:id="@+id/fsalad">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imsalad"
-        android:layout_gravity="left|top"
-        android:background="@drawable/food_8" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Salad"
-        android:id="@+id/textView12"
-        style="@style/editText3"
-        android:layout_gravity="left|top" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Food name"
-        android:id="@+id/salad"
-        style="@style/editText2"
-        android:layout_gravity="left|bottom" />
-</FrameLayout>
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -279,6 +283,8 @@ android:background="#b5151617"
         style="@style/editText2"
         android:layout_gravity="left|bottom" />
 </FrameLayout>
+
+<!--
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -310,6 +316,7 @@ android:background="#b5151617"
         style="@style/editText2"
         android:layout_gravity="left|bottom" />
 </FrameLayout>
+-->
 
     </LinearLayout>
 </ScrollView>

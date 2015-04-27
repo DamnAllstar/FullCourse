@@ -360,6 +360,7 @@ public class NewFeeds extends ActionBarActivity
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("myFav", list);
         bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
+        bundle.putString("username",getUserName);
 
         switch (switch_case) {
             case 0:
