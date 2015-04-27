@@ -28,9 +28,8 @@
             android:layout_marginRight="10dp"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:id="@+id/AddFC"
-            android:background="@drawable/add_button"
-             />
+            android:id="@+id/addFullcource"
+            android:background="@drawable/add_button" />
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="30dp"

@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 /**
  * This is MY FULLCOURSE page
  */
-public class menu1_Fragment extends Fragment implements FCFragment.OnFragmentInteractionListener,View.OnClickListener {
+public class menu1_Fragment extends Fragment implements FCFragment.OnFragmentInteractionListener {
 
     public void onFragmentInteraction(String id) {
 
@@ -21,8 +21,11 @@ public class menu1_Fragment extends Fragment implements FCFragment.OnFragmentInt
 
     //#################Tan's Fragment Edition#######################################
     View rootview;
+    View Allview;
+
     @Nullable
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         rootview = inflater.inflate(R.layout.activity_my_full_course,container,false);
 
@@ -39,19 +42,4 @@ public class menu1_Fragment extends Fragment implements FCFragment.OnFragmentInt
     }
 
 
-    @Override
-    public void onClick(View v) {
-        ImageButton button = (ImageButton)v.findViewById(R.id.AddFC);
-        button.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(menu1_Fragment.this.getActivity(), FCRegister.class);
-                startActivity(intent);
-            }
-        });
-
-
-    }
 }

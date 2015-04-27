@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Created by Chonlaphoom on 4/27/2015.
  */
-public class ConnectGetMyFav extends AsyncTask<String, Integer, String> {
+public class ConnectGetFoodByType extends AsyncTask<String, Integer, String> {
     private HttpPost httppost;
     private HttpClient httpclient;
     private List<NameValuePair> nameValuePairs;
@@ -36,7 +36,7 @@ public class ConnectGetMyFav extends AsyncTask<String, Integer, String> {
     private Context context;
     public String get;
     public int switch_case;
-    ConnectGetMyFav(Context context,String URL){
+    ConnectGetFoodByType(Context context, String URL){
         this.context = context;
 
         //สร้างส่วนประกอบที่จำเป็นในการเชื่อมกับ Server
@@ -131,31 +131,31 @@ public class ConnectGetMyFav extends AsyncTask<String, Integer, String> {
                     for(int i=0;i<size;i++){
 
                         String data1 = jResult.getJSONObject(i).getString("user");
-                        int data2 = jResult.getJSONObject(i).getInt("fullcourse_id");
+                     //   int data2 = jResult.getJSONObject(i).getInt("fullcourse_id");
                         //    String data2  = jResult.getJSONObject(i).getString("name");
 
                         name.add(data1);
-                        fullcourse_id.add(data2);
+                    //    fullcourse_id.add(data2);
                         //   name.add(data2);
 
                     }
 
                     //ถ้าดึงข้อมูลจาก database มีปัญหาจะแสดง error
                 }else{
-                    ((NewFeeds)context).errorConnectToServer();
+                    ((FCRegister)context).errorConnectToServer();
                 }
-                ((NewFeeds)context).getMyFav(name,switch_case,fullcourse_id);
+                ((FCRegister)context).getName(name);
 
 
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้
             } catch (JSONException e) {
                 Log.e("ConnectServer", "Error parsing data " + e.toString() + "/" + result);
-                ((NewFeeds)context).errorConnectToServer();
+                ((FCRegister)context).errorConnectToServer();
             }
 
             //ถ้าเชื่อมต่อกับ server ไม่ได้จะทำงานต่อไปนี้
         }else{
-            ((NewFeeds)context).cannotConnectToServer();
+            ((FCRegister)context).cannotConnectToServer();
         }
 
         dialogConnect.dismiss();
