@@ -147,7 +147,7 @@ public class ConnectLogin extends AsyncTask<String, Integer, String> {
 
                     ((MainActivity)context).errorConnectToServer();
                 }
-                ((MainActivity)context).setList(email);
+                ((MainActivity)context).setList(email,name);
 
 
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้

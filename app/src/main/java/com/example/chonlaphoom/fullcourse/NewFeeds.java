@@ -26,6 +26,7 @@ public class NewFeeds extends ActionBarActivity
 
     String get;
     String getUser;
+    String getUserName;
     ArrayAdapter arrayAdapter;
     ListView listView;
 
@@ -53,7 +54,8 @@ public class NewFeeds extends ActionBarActivity
         Intent intent = new Intent();
         intent = getIntent();
         getUser =  intent.getStringExtra("user");
-        Toast.makeText(this,"Welcome back "+getUser, Toast.LENGTH_LONG).show();
+        getUserName = intent.getStringExtra("user_name");
+        Toast.makeText(this,"Welcome back "+getUserName, Toast.LENGTH_LONG).show();
 
         //connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
         //connectServer.execute();

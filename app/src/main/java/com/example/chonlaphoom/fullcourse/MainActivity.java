@@ -35,8 +35,11 @@ public class MainActivity extends ActionBarActivity {
     EditText password;
  // public   ArrayList<String> list;
     public ArrayList<String> list;
+    public ArrayList<String> list2;
     public String get;
+    public String get2;
     public String identify;
+    public String identify_name;
     ArrayAdapter<String> arrayAdapter;
   //  ConnectServer connectServer;
     ListView listView;
@@ -196,17 +199,21 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public void setList(ArrayList<String> email){
+    public void setList(ArrayList<String> email,ArrayList<String> name ){
 
         Context context = getApplicationContext();
         list = email;
+        list2 = name;
         get = String.valueOf(list.get(0));
         identify = get;
+        get2 = String.valueOf(list2.get(0));
+        identify_name = get2;
      //   get = connectServer.returnValue();
         if(get != null) {
             //#################for checking home page##################################
             Intent intent = new Intent(MainActivity.this, NewFeeds.class);
             intent.putExtra("user",identify);
+            intent.putExtra("user_name",identify_name);
             startActivity(intent);
             //########################################################################
             Toast.makeText(context,"login success", Toast.LENGTH_SHORT).show();
@@ -230,5 +237,5 @@ public class MainActivity extends ActionBarActivity {
     {
         return identify;
     }
-
+    public String getUserName(){return identify_name;}
 }

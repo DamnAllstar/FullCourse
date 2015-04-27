@@ -131,10 +131,10 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
                     for(int i=0;i<size;i++){
 
                         String data1 = jResult.getJSONObject(i).getString("email");
-                    //    String data2  = jResult.getJSONObject(i).getString("name");
+                        String data2  = jResult.getJSONObject(i).getString("name");
 
                         email.add(data1);
-                     //   name.add(data2);
+                        name.add(data2);
 
                     }
 
@@ -142,7 +142,7 @@ public class ConnectServer extends AsyncTask<String, Integer, String> {
                 }else{
                     ((MainActivity)context).errorConnectToServer();
                 }
-                ((MainActivity)context).setList(email);
+                ((MainActivity)context).setList(email,name);
 
 
                 //ถ้าขณะแปลงข้อมูล JSON มีปัญหาจะมาทำงานส่วนนี้
