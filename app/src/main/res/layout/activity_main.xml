@@ -37,7 +37,7 @@
             style="@style/editText"
             android:layout_height="match_parent"
             android:layout_width="305dp"
-            android:password="false"
+
             />
 
 
@@ -75,8 +75,9 @@
             style="@style/editText"
             android:layout_height="match_parent"
             android:layout_width="305dp"
-            android:textColorHighlight="#fff"/>
-
+            android:textColorHighlight="#fff">
+            <requestFocus/>
+        </EditText>
 
 
 
