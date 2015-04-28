@@ -28,11 +28,13 @@ public class menu1_Fragment extends Fragment implements FCFragment.OnFragmentInt
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         rootview = inflater.inflate(R.layout.activity_my_full_course,container,false);
+
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new FCFragment())
                     .commit();
         }
+
         return rootview;
     }
 

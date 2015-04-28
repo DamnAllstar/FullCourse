@@ -1,5 +1,7 @@
 package com.example.chonlaphoom.fullcourse;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -18,7 +20,7 @@ public class FCRegister extends ActionBarActivity {
 
     private Spinner appe, soup , fish,meat,main,salad,dessert,drink;
     private Button submit;
-
+    ArrayList<String> listName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,5 +92,24 @@ public class FCRegister extends ActionBarActivity {
             }
 
         });
+    }
+
+    ///ถ้าไม่สามารถเชื่อมต่อกับ Server ได้จะมาทำงานที่ Function นี้
+    public void cannotConnectToServer() {
+        Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับ Server", Toast.LENGTH_LONG).show();
+    }
+
+    //ถ้าดึงข้อมูลจาก Server มีปัญหา จะมาทำงานที่ Function นี้
+    public void errorConnectToServer() {
+        //    Toast.makeText(this, "ไม่พบข้อมูลที่ค้นหา", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "login fail", Toast.LENGTH_LONG).show();
+
+    }
+
+    public void getName(ArrayList<String> name)
+    {
+        Context context = getApplicationContext();
+        listName = name;
+
     }
 }
