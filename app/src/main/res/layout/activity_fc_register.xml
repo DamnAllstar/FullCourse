@@ -21,17 +21,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/Rappe" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Soup"
-                android:id="@+id/textView4" />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Rsoup" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -93,17 +82,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/Rdessert" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Drink"
-                android:id="@+id/textView13" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Rdrink" />
 
             <ImageButton
                 android:layout_width="wrap_content"
