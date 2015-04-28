@@ -31,7 +31,7 @@ public class FCRegister extends ActionBarActivity {
     public  ArrayList<String> listSalad;
     public  ArrayList<String> listMeat;
 
-    String getUserName;
+    String getUser ="123@123";
 
     EditText change;
 
@@ -40,9 +40,9 @@ public class FCRegister extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fc_register);
 
-        change = (EditText)findViewById(R.id.editText2);
+        change = (EditText)findViewById(R.id.nameFc);
 
-        ConnectServer connectServer = new ConnectServer(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/addFull.php");
+
 
         ConnectGetFoodByApp  connectGetFoodByApp = new ConnectGetFoodByApp(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/getFoodByAppe.php");
         connectGetFoodByApp.execute();
@@ -169,26 +169,27 @@ public class FCRegister extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-
+                ConnectServer connectServer = new ConnectServer(FCRegister.this, "http://naneport.arg.in.th/eatwell/full/addFull.php");
+                connectServer.addValue("fullName",change.getText().toString());
+                connectServer.addValue("User",getUser);
+                connectServer.addValue("Main",String.valueOf(main.getSelectedItem()));
+                connectServer.addValue("Dessert",String.valueOf(dessert.getSelectedItem()));
+                connectServer.addValue("Fish",String.valueOf(fish.getSelectedItem()));
+                connectServer.addValue("Salad",String.valueOf(salad.getSelectedItem()));
+                connectServer.addValue("Meat",String.valueOf(meat.getSelectedItem()));
+                connectServer.addValue("Appetize",String.valueOf(appe.getSelectedItem()));
 
                 Toast.makeText(FCRegister.this,
-                        "Result : " +
+                        "Result :\nfullname : " + change.getText().toString()+ "\nBy User : "+getUser+
                                 "\nAppetizer : " + String.valueOf(appe.getSelectedItem()) +
                                 "\nFish Dish : " + String.valueOf(fish.getSelectedItem()) +
                                 "\nMeat Dish : " + String.valueOf(meat.getSelectedItem()) +
                                 "\nMain Dish : " + String.valueOf(main.getSelectedItem()) +
                                 "\nSalad : " + String.valueOf(salad.getSelectedItem())+
                                 "\nDessert : " + String.valueOf(dessert.getSelectedItem())        ,
-                        Toast.LENGTH_SHORT).show();
+                Toast.LENGTH_SHORT).show();
 
-         //       connectServer.addValue("fullName",change.getText().toString());
-         //       connectServer.addValue("User",getUserName);
-         //       connectServer.addValue("Main",String.valueOf(main.getSelectedItem()));
-         //       connectServer.addValue("Dessert",String.valueOf(dessert.getSelectedItem()));
-        //        connectServer.addValue("Fish",String.valueOf(fish.getSelectedItem()));
-         //       connectServer.addValue("Salad",String.valueOf(salad.getSelectedItem()));
-         //       connectServer.addValue("Meat",String.valueOf(meat.getSelectedItem()));
-        //       connectServer.addValue("Appetize",String.valueOf(appe.getSelectedItem()));
+
 
 
             }
