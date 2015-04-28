@@ -126,10 +126,8 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
         super.onCreate(savedInstanceState);
         exampleListItemList = new ArrayList();
 
-        for(int i=0;i!=title.length;i++){
-            exampleListItemList.add(new FCItemList(title[i]));
 
-        }
+
         /*
         exampleListItemList.add(new FCItemList("FCEX 1"));
         exampleListItemList.add(new FCItemList("FCEX 2"));
@@ -145,16 +143,23 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fc, container, false);
+        Bundle bundle = getArguments();
+        final ArrayList<String> full_name = bundle.getStringArrayList("myFull");
+        final ArrayList<Integer> full_id = bundle.getIntegerArrayList("fullcourse_id");
 
+        for(int i=0;i!=full_id.size();i++){
+            exampleListItemList.add(new FCItemList(Integer.toString(full_id.get(i))));
+
+        }
         //###################################TAN Adaptor##############################################
         String[] from = {"flag2","shadow","text"};
         int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
-        for(int i=0;i<14;i++){
+        for(int i=0;i<full_id.size();i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("flag2", Integer.toString(flag[i]));
             hm.put("shadow", Integer.toString(shadow[i]));
-            hm.put("text", title[i]);
+            hm.put("text", String.valueOf(full_name.get(i)));
             aList.add(hm);
         }
         SimpleAdapter TanAdapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
@@ -207,7 +212,7 @@ public class FCFragment extends android.support.v4.app.Fragment implements AbsLi
                 , Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(FCFragment.this.getActivity(), FCinfo.class);
-        int ID =99102; //Put ID in here!!
+        int ID =Integer.parseInt(item.getItemTitle()); //Put ID in here!!
         intent.putExtra("ID",ID);
         startActivity(intent);
     }

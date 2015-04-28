@@ -130,12 +130,12 @@ public class ConnectGetResName extends AsyncTask<String, Integer, String>  {
                     //วน Loop เอาค่าใส่ใน List
                     for(int i=0;i<size;i++){
 
-                        String data1 = jResult.getJSONObject(i).getString("name");
-                        int data2 = jResult.getJSONObject(i).getInt("fullcourse_id");
+                        String dataname = jResult.getJSONObject(i).getString("name");
+                        int dataid = jResult.getJSONObject(i).getInt("fullcourse_id");
                         //    String data2  = jResult.getJSONObject(i).getString("name");
 
-                        name.add(data1);
-                        fullcourse_id.add(data2);
+                        name.add(dataname);
+                        fullcourse_id.add(dataid);
                         //   name.add(data2);
 
                     }
