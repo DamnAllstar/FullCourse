@@ -132,37 +132,14 @@ public class FCinfo extends ActionBarActivity {
     public void getFullOwner(ArrayList<String> owner)
     {
         getOwner = String.valueOf(owner.get(0));
-
-        TextView text = (TextView) findViewById(R.id.by);
-        text.setText("by ");
-        text = (TextView) findViewById(R.id.nameCt);
-        text.setText(getOwner);
-
-        text = (TextView) findViewById(R.id.name);
-        text.setText("EBI");
-        text = (TextView) findViewById(R.id.appetizer);
-        text.setText("Nude dle");
-        text = (TextView) findViewById(R.id.soup);
-        text.setText("Lobster soup");
-        text = (TextView) findViewById(R.id.fish);
-        text.setText("2 fish");
-        text = (TextView) findViewById(R.id.meat);
-        text.setText("Bacon cabbage");
-        text = (TextView) findViewById(R.id.main);
-        text.setText("Shrimp");
-        text = (TextView) findViewById(R.id.salad);
-        text.setText("Meat salad");
-        text = (TextView) findViewById(R.id.dessert);
-        text.setText("Jelly");
-        text = (TextView) findViewById(R.id.drink);
-        text.setText("Jizz");
-
-
      //   Toast.makeText(this, getOwner, Toast.LENGTH_LONG).show();
 
 
         TextView text = (TextView) findViewById(R.id.by);
-        text.setText("by "+username);
+        text.setText("by");
+
+        text = (TextView) findViewById(R.id.nameCt);
+        text.setText(getOwner);
 
         text = (TextView) findViewById(R.id.name);
         text.setText(this.fcname);
