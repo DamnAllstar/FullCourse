@@ -20,9 +20,11 @@ public class FCinfo extends ActionBarActivity {
     int id =0;
 
     ConnectGetFCInfo connectGetFCInfo;
+    ConnectGetFullOwner connectGetFullOwner;
     ArrayList<String> food_name;
     ArrayList<String> rest_name;
     ArrayList<Integer> food_price;
+    String getOwner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,27 +83,13 @@ public class FCinfo extends ActionBarActivity {
         connectGetFCInfo.addValue("fullId",String.valueOf(id));
         connectGetFCInfo.execute();
 
-        TextView text = (TextView) findViewById(R.id.by);
-        text.setText("by "+String.valueOf(id));
 
-        text = (TextView) findViewById(R.id.name);
-        text.setText("EBI");
-        text = (TextView) findViewById(R.id.appetizer);
-        text.setText("Nude dle");
-        text = (TextView) findViewById(R.id.soup);
-        text.setText("Lobster soup");
-        text = (TextView) findViewById(R.id.fish);
-        text.setText("2 fish");
-        text = (TextView) findViewById(R.id.meat);
-        text.setText("Bacon cabbage");
-        text = (TextView) findViewById(R.id.main);
-        text.setText("Shrimp");
-        text = (TextView) findViewById(R.id.salad);
-        text.setText("Meat salad");
-        text = (TextView) findViewById(R.id.dessert);
-        text.setText("Jelly");
-        text = (TextView) findViewById(R.id.drink);
-        text.setText("Jizz");
+        connectGetFullOwner = new ConnectGetFullOwner(FCinfo.this, "http://naneport.arg.in.th/eatwell/full/getFullOwner.php");
+        connectGetFullOwner.addValue("fullId",String.valueOf(id));
+        connectGetFullOwner.execute();
+
+
+
     }
 
     ///ถ้าไม่สามารถเชื่อมต่อกับ Server ได้จะมาทำงานที่ Function นี้
@@ -126,5 +114,38 @@ public class FCinfo extends ActionBarActivity {
         Toast.makeText(context,String.valueOf(this.food_name.get(0))+String.valueOf(this.food_price.get(0))
                 +String.valueOf(this.rest_name.get(0))
                 ,Toast.LENGTH_SHORT).show();
+    }
+
+    public void getFullOwner(ArrayList<String> owner)
+    {
+        getOwner = String.valueOf(owner.get(0));
+
+        TextView text = (TextView) findViewById(R.id.by);
+        text.setText("by ");
+        text = (TextView) findViewById(R.id.nameCt);
+        text.setText(getOwner);
+
+        text = (TextView) findViewById(R.id.name);
+        text.setText("EBI");
+        text = (TextView) findViewById(R.id.appetizer);
+        text.setText("Nude dle");
+        text = (TextView) findViewById(R.id.soup);
+        text.setText("Lobster soup");
+        text = (TextView) findViewById(R.id.fish);
+        text.setText("2 fish");
+        text = (TextView) findViewById(R.id.meat);
+        text.setText("Bacon cabbage");
+        text = (TextView) findViewById(R.id.main);
+        text.setText("Shrimp");
+        text = (TextView) findViewById(R.id.salad);
+        text.setText("Meat salad");
+        text = (TextView) findViewById(R.id.dessert);
+        text.setText("Jelly");
+        text = (TextView) findViewById(R.id.drink);
+        text.setText("Jizz");
+
+
+     //   Toast.makeText(this, getOwner, Toast.LENGTH_LONG).show();
+
     }
 }
