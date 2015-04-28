@@ -117,6 +117,9 @@ public class NewFeeds extends ActionBarActivity
                 connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
                 connectServer.setCase(position);
                 connectServer.execute();
+                Intent intent = new Intent(NewFeeds.this, MainActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "logout out", Toast.LENGTH_LONG).show();
                 break;
         }
         // update the main content by replacing fragments
