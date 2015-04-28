@@ -100,7 +100,7 @@ public class NewFeeds extends ActionBarActivity
                 mTitle="My Favorites";*/
                 connectGetMyFav = new ConnectGetMyFav(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/myFavorite.php");
                 connectGetMyFav.setCase(position);
-                connectGetMyFav.addValue("loginmaail",getUser);
+                connectGetMyFav.addValue("loginemail",getUser);
                 connectGetMyFav.execute();
                 break;
             case 3:

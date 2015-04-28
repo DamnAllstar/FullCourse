@@ -130,7 +130,7 @@ public class ConnectGetMyFav extends AsyncTask<String, Integer, String> {
                     //วน Loop เอาค่าใส่ใน List
                     for(int i=0;i<size;i++){
 
-                        String data1 = jResult.getJSONObject(i).getString("name");
+                        String data1 = jResult.getJSONObject(i).getString("user");
                         int data2 = jResult.getJSONObject(i).getInt("fullcourse_id");
                         //    String data2  = jResult.getJSONObject(i).getString("name");
 
