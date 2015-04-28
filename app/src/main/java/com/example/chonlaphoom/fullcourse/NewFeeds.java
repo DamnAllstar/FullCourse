@@ -23,13 +23,15 @@ public class NewFeeds extends ActionBarActivity
     ArrayList<String> list;
     ArrayList<Integer> fullcourse_id;
 
-
+    ArrayList<Integer> price;
     String get;
     String getUser;
     String getUserName;
     ArrayAdapter arrayAdapter;
     ListView listView;
+    ArrayList<Integer> lowcost_id;
 
+    ConnectGetSumPrice connectGetSumPrice;
     ConnectGetResName connectServer;
     ConnectGetMyFav connectGetMyFav;
     ConnectGetMyFull connectGetMyFull;
@@ -82,6 +84,10 @@ public class NewFeeds extends ActionBarActivity
             case 0:
                 //objFragment = new newfeeds_Fragment();
                 //mTitle="Home";
+
+                connectGetSumPrice = new ConnectGetSumPrice(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getFullPrice.php");
+                connectGetSumPrice.execute();
+
                 connectServer = new ConnectGetResName(NewFeeds.this, "http://naneport.arg.in.th/eatwell/full/getRestau.php");
                 connectServer.setCase(position);
                 connectServer.execute();
@@ -256,6 +262,12 @@ public class NewFeeds extends ActionBarActivity
     }
 
 
+    public void getFullPrice(ArrayList<Integer>id,ArrayList<Integer>price){
+        this.price = price;
+        lowcost_id = id;
+
+    }
+
     public void getRes(ArrayList<String> name , int switch_case , ArrayList<Integer> fullcourse_id){
 
         Fragment objFragment = null;
@@ -263,9 +275,13 @@ public class NewFeeds extends ActionBarActivity
         list = name;
         this.fullcourse_id = fullcourse_id;
 
+        //Log.d("test","getRes "+String.valueOf(this.price.get(0)));
+        //Log.d("test","getRes "+String.valueOf(lowcost_id.get(0)));
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("popular", list);
         bundle.putIntegerArrayList("fullcourse_id",this.fullcourse_id);
+        bundle.putIntegerArrayList("fcsum",this.price);
+        bundle.putIntegerArrayList("lowcostid",lowcost_id);
 
         switch (switch_case) {
             case 0:

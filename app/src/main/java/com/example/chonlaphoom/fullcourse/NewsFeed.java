@@ -149,7 +149,18 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
         Bundle bundle = getArguments();
         final ArrayList<String> rest_name = bundle.getStringArrayList("popular");
         final ArrayList<Integer> fullcourse_id = bundle.getIntegerArrayList("fullcourse_id");
+        final ArrayList<Integer> sumprice = bundle.getIntegerArrayList("fcsum");
+        final ArrayList<Integer> lowcost_id = bundle.getIntegerArrayList("lowcostid");
         username = bundle.getString("username");
+
+        //Log.d("test","rest_name "+String.valueOf(rest_name.size()));
+        //Log.d("test","sumprice "+String.valueOf(sumprice.size()));
+        //Log.d("test",String.valueOf(sumprice.get(0)));
+        //Log.d("test",String.valueOf(lowcost_id.get(0)));
+        //####################PREPARE FOR SORT LOW COST###############################################
+        // ไม่แน่ใจว่าจะได้ใช้อยู่มั้ย
+        // ตอนนี้มี id ฟูลคอร์ส ที่เรียงตามราคารวม โดยฟิลเตอร์ราคาไม่เกิน 400 เรียบร้อยแล้ว
+        //############################################################################################
 
         //#####################################make button list#######################################
         exampleListItemList = new ArrayList();
@@ -292,6 +303,47 @@ public class NewsFeed extends android.support.v4.app.Fragment implements AbsList
                 tabPopular.setBackgroundResource(R.drawable.tab_3);
                 tabRecently.setBackgroundResource(R.drawable.tab_3);
                 tabAroundYou.setBackgroundResource(R.drawable.tab_3);
+
+
+                exampleListItemList = new ArrayList();
+
+                exampleListItemList2 = new ArrayList();
+                for(int i=0;i!=rest_name.size();i++){
+                    if(sumprice.get(i)<=400) {
+                        exampleListItemList.add(new NFItemlist(String.valueOf(rest_name.get(i))));
+                    }
+                }
+
+                for(int i=0;i!=rest_name.size();i++){
+                    if(sumprice.get(i)<=400) {
+                        exampleListItemList2.add(new NFItemlist(String.valueOf(fullcourse_id.get(i))));
+                    }
+                }
+                //###########################################################################################
+
+                mAdapter = new NFAdapterlist(getActivity(), exampleListItemList);
+
+                //###################################TAN Adaptor##############################################
+                String[] from = {"flag2","shadow","text"};
+                int[] to = {R.id.fc_pic,R.id.fc_shadow,R.id.fc_text};
+                List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+                for(int i=0;i<rest_name.size();i++){
+                    if(sumprice.get(i)<=400){
+                        HashMap<String, String> hm = new HashMap<String,String>();
+                        hm.put("flag2", Integer.toString(flag[i]));
+                        hm.put("shadow", Integer.toString(shadow[i]));
+                        hm.put("text", String.valueOf(rest_name.get(i)));
+                        aList.add(hm);
+                    }
+                }
+                SimpleAdapter TanAdapter = new SimpleAdapter(getActivity().getBaseContext(),aList,R.layout.item_list_layout,from,to);
+                //###########################################################################################
+
+                // Set the adapter , ****Choose between TanAdapter/mAdapter*****
+                mListView = (AbsListView) view.findViewById(android.R.id.list);
+                ((AdapterView) mListView).setAdapter(TanAdapter);
+
+                // Set OnItemClickListener so we can be notified on item clicks
             }
         });
         //###########################################################################################
